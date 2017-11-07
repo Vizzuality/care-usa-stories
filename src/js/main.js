@@ -41,3 +41,5 @@ pauseButton.bind('click', function() {
         pauseButton.html("&#x25BA");
     }
 });
+
+
