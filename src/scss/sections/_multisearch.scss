@@ -1,0 +1,152 @@
+/* Multi-search
+================================================= */
+.multi-search-container {
+  background-color: $bg-primary-color;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  .label-trigger {
+    display: none;
+  }
+  .multisearch-form {
+    .filters-holder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1030px;
+      .field {
+        position: relative;
+        width: 100%;
+        input,
+        select {
+          min-width: 100%;
+          border-right: 0;
+          border-top: 0;
+          border-bottom: 0;
+          @media only screen and (min-width: $breakpoint-laptop) {
+            min-width: 210px;
+          }
+          @media only screen and (min-width: 768px) and (max-width: $breakpoint-laptop) {
+            padding-left: 15px;
+            font-size: 12px;
+          }
+        }
+        &:first-child {
+          @media only screen and (min-width: $breakpoint-laptop) {
+            padding-left: 18px;
+          }
+          input {
+            border-left: 0;
+          }
+          button {
+            background: transparent;
+            position: absolute;
+            top: 4px;
+            bottom: 0;
+            right: 24px;
+            i {
+              font-size: 16px;
+              display: block;
+            }
+            &:active i,
+            &:hover i,
+            &:focus i {
+              color: #833604;
+              transform: scale(1.5);
+              @extend %transition;
+            }
+          }
+        }
+        &.date {
+          i {
+            font-size: 16px;
+            display: block;
+            position: absolute;
+            top:0;
+            line-height: 55px;
+            right: 24px;
+          }
+        }
+        &.select {
+          select {
+            display: block;
+            background-image: url('#{$path-images}helpers/chevron-down.png');
+            background-position: 86% center;
+            background-repeat: no-repeat;
+            background-size: inherit;
+            cursor: url('#{$path-images}helpers/pointer.png'), pointer;
+            &:focus {
+              background-image: url('#{$path-images}helpers/chevron-up.png');
+            }
+          }
+        }
+      }
+    }
+  }
+  /**************Mobile multisearch*******************/
+  @media only screen and (max-width: $breakpoint-mobile) {
+    .label-trigger {
+      display: block;
+      padding-left: 35px;
+      font-size: 14px;
+      line-height: 55px;
+      color: $primary-text-color;
+      font-family: $mont-sb;
+      text-align: center;
+      span {
+        font-size: 12px;
+        font-weight: bolder;
+        padding-left: 30px;
+      }
+    }
+    form.multisearch-form {
+      width: 100%;
+      background: #fff;
+      transform: scaleY(0);
+      transform-origin: top;
+      max-height: 0px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+      border-top: 1px solid #e6e6e6;
+      transition: all 0.5s ease-in-out;
+      .filters-holder {
+        display: block;
+        .field {
+          width: 100%;
+          border-bottom: 1px solid #e6e6e6;
+          input,
+          select {
+            border:0;
+            max-width: 100%;
+          }
+          i {
+            font-size: 12px;
+          }
+          &.select {
+            padding-right: 24px;
+            select {
+              background-position: 100% center;
+
+            }
+          }
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    input[type=checkbox]:checked ~ form {
+      max-height: inherit;
+      transform: scaleY(1);
+    }
+
+    input[type=checkbox]:checked + label {
+     span {
+       &:before {
+         transform: rotate(-90deg);
+       }
+     }
+    }
+  }
+}
