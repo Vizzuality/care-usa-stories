@@ -1,0 +1,33 @@
+.video-container {
+  width: 420px;
+  float: left;
+  margin-right: 11%;
+  .video-box {
+    position: relative;
+    height: 270px;
+    span#pause {
+      position: absolute;
+      bottom: 1px;
+      color: #fff;
+      display: block;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: #f56608;
+    }
+    video {
+      height: 270px;
+    }
+  }
+  .video-content {
+    padding: 55px 65px 125px;
+    box-shadow: 0 0 10px 5px rgba(138, 157, 166, 0.1);
+    p {
+      color: #68696b;
+      font-family: $karla-b;
+      font-size: 16px;
+      line-height: 34px;
+    }
+  }
+}

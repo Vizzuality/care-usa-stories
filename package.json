@@ -1,0 +1,22 @@
+{
+  "name": "care-usa-stories-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start": "npm-run-all -p watch-css start-js",
+    "watch-css": "npm run build-css -- --watch --recursive",
+    "build-css": "node-sass-chokidar src/styles/style.scss -o ./src/",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js"
+  }
+}

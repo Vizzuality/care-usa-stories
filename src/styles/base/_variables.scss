@@ -1,0 +1,59 @@
+
+//======= Colors =======//
+$bg-primary-color: #fcfbfc;
+$brand-primary-color: #f46508;
+$brand-secondary-color: #1a1d29;
+$primary-text-color: #2c2c2c;
+$secondary-text-color: #808080;
+$paragraph-color: #68696b;
+$facebook-color: rgb(59, 89, 152);
+$twitter-color: rgb(29, 161, 242);
+//======= Fonts =======//
+$care: "Care";
+$karla-b: "KarlaBold";
+$karla-b-i: "KarlaBoldItalic";
+$karla-i: "KarlaItalic";
+$karla-r: "KarlaRegular";
+$mont-bl: "MontserratBlack";
+$mont-bl-i: "MontserratBlackItalic";
+$mont-b: "MontserratBold";
+$mont-b-i: "MontserratBoldItalic";
+$mont-e-b: "MontserratExtraBold";
+$mont-e-b-i: "MontserratExtraBoldItalic";
+$mont-i: "MontserratItalic";
+$mont-l: "MontserratLight";
+$mont-l-i: "MontserratLightItalic";
+$mont-e-l: "MontserratExtraLight";
+$mont-e-l-i: "MontserratExtraLightItalic";
+$mont-m: "MontserratMedium";
+$mont-m-i: "MontserratMediumItalic";
+$mont-r: "MontserratRegular";
+$mont-sb: "MontserratSemiBold";
+$mont-sb-i: "MontserratSemiBoldItalic";
+$mont-th: "MontserratThin";
+$mont-th-i: "MontserratThinItalic";
+
+//======= Path =======//
+
+$path-fonts: "/fonts/";
+$path-images: "/images/";
+$path-icons: "/icons/";
+
+//======= General =======//
+
+$direction: top, right, bottom, left;
+
+//======= Device breakpoints =======//
+
+$breakpoint-xss: 320px;
+$breakpoint-xs: 375px;
+$breakpoint-s: 750px;
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 990px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1280px;
+$breakpoint-lg: 1440px;
+$breakpoint-xlg: 2560px;
+body {
+  font-family: $mont-bl;
+}
