@@ -319,7 +319,7 @@ class Filters extends React.Component {
               <input
                 id="dateFilter"
                 name="dateInput"
-                placeholder="20 / 04 / 2012 \u2026"
+                placeholder="20 / 04 / 2012"
                 title="Select Your Date"
               />
               <i className="icon-calendar" />

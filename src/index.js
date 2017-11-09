@@ -1,9 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
-import registerServiceWorker from './registerServiceWorker';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import * as reducers from 'store';
 
 import 'slick-carousel/slick/slick.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './app';
+import registerServiceWorker from './registerServiceWorker';
+
+const reducer = combineReducers({
+  ...reducers
+});
+
+const store = createStore(
+  reducer,
+  compose(
+    applyMiddleware(thunk),
+    /* Redux dev tool, install chrome extension in
+     * https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en */
+    typeof window === 'object' &&
+    typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
+  )
+);
+
+
+ReactDOM.render(
+  <Provider  store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'));
 registerServiceWorker();

@@ -5,7 +5,7 @@ import Stories from "components/stories.component";
 import RecentStories from "components/recent-stories.component";
 import ContactForm from "components/contact-form.component";
 
-class Content extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <main id="pageContent" className="page-wrapper home">
@@ -19,4 +19,4 @@ class Content extends React.Component {
   }
 }
 
-export default Content;
+export default Home;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from 'components/header.component';
-import Home from 'pages/home.component';
+import Home from 'pages/home/home';
 import Footer from 'components/footer.component';
 import './style.css';
 
