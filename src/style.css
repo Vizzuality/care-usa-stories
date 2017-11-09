@@ -600,6 +600,8 @@ cite {
               .article-container .grid .article-list .box .holder .article-content .article-layer:not(.no-image) {
                 position: relative; }
             .article-container .grid .article-list .box .holder .article-content figcaption {
+              display: block;
+              overflow: hidden;
               background-color: #fff;
               border: 1px solid #e6e6e6;
               min-height: 284px;

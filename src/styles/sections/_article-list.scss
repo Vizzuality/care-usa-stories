@@ -77,6 +77,8 @@
               }
             }
             figcaption {
+              display: block;
+              overflow: hidden;
               background-color: #fff;
               border: 1px solid #e6e6e6;
               min-height: 284px;
