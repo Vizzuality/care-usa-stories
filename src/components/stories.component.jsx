@@ -52,9 +52,10 @@ class Stories extends React.Component {
               </form>)]
             }
           </Masonry>
-          <a className="more" href="#">
+          {false && <a className="more" href="#">
             SHOW MORE STORIES
           </a>
+          }
         </div>
       </section>
     );
