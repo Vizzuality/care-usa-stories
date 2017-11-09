@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import Header from './components/header.js';
-import Content from './components/content.js';
-import Footer from './components/footer.js';
+import Header from 'components/header.component';
+import Home from 'pages/home.component';
+import Footer from 'components/footer.component';
 import './style.css';
 
 class App extends Component {
   render() {
     return [
       <Header key="header" />,
-      <Content key="content" />,
+      <Home key="content" />,
       <Footer key="footer" />
     ];
   }
