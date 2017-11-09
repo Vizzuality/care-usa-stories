@@ -15,14 +15,12 @@ const storiesReducer = {
   }
 };
 
-export function getStories() {
-  return (dispatch) => {
-    contentful.getEntries({ content_type: 'story', order: 'fields.title' })
-      .then(({ items }) => dispatch({
-        type: GET_STORIES,
-        payload: normalize(items, storiesSchema)
-      }));
-  };
+export async function getStoriesThunk(dispatch) {
+  const { items } = await contentful.getEntries({ content_type: 'story', order: 'fields.title' });
+  dispatch({
+    type: GET_STORIES,
+    payload: normalize(items, storiesSchema)
+  });
 }
 
 export default createReducer(initialState, storiesReducer);
