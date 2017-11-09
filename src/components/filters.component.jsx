@@ -25,7 +25,6 @@ class Filters extends React.Component {
                 id="formSearch"
                 type="search"
                 name="searchInput"
-                defaultValue
                 placeholder="Search by..."
               />
               <button
@@ -320,7 +319,6 @@ class Filters extends React.Component {
               <input
                 id="dateFilter"
                 name="dateInput"
-                defaultValue
                 placeholder="20 / 04 / 2012 \u2026"
                 title="Select Your Date"
               />

@@ -102,7 +102,6 @@ class Stories extends React.Component {
                   <input
                     id="donateField"
                     name="donateInput"
-                    defaultValue
                     placeholder="$"
                   />
                   <button

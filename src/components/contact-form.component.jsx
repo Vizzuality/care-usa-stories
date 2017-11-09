@@ -13,7 +13,6 @@ class ContactForm extends React.Component {
         <input
           id="newsletterEmail"
           name="newsletterInput"
-          defaultValue
           placeholder="Enter email address"
         />
         <button
