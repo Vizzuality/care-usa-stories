@@ -2,26 +2,22 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Banner from "components/banner.component";
 import Filters from "components/filters.component";
-import Stories from "components/stories.component";
+import StoriesGrid from "components/stories-grid.component";
 import RecentStories from "components/recent-stories.component";
 import ContactForm from "components/contact-form.component";
 
-class Home extends React.Component {
+class Stories extends React.Component {
 
   static propTypes = {
-    getStories: PropTypes.func
+    data: PropTypes.object
   };
-
-  componentWillMount() {
-    this.props.getStories();
-  }
 
   render() {
     return (
       <main id="pageContent" className="page-wrapper home">
         <Banner />
         <Filters />
-        <Stories stories={this.props.stories} />
+        <StoriesGrid stories={this.props.data} />
         <RecentStories />
         <ContactForm />
       </main>
@@ -29,4 +25,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Stories;

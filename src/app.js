@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
+import Stories from 'pages/stories/stories.component';
 import Header from 'components/header.component';
-import Home from 'pages/home/home';
 import Footer from 'components/footer.component';
 import './style.css';
 
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return [
       <Header key="header" />,
-      <Home key="content" />,
+      <Stories key="content" />,
       <Footer key="footer" />
     ];
   }

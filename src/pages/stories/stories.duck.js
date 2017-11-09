@@ -6,12 +6,12 @@ import { storiesSchema } from 'schemas';
 const GET_STORIES = 'stories/GET_STORIES';
 
 const initialState = {
-  stories: {}
+  data: {}
 };
 
-const homeReducer = {
+const storiesReducer = {
   [GET_STORIES](state, action) {
-    return { ...state, stories: action.payload };
+    return { ...state, data: action.payload };
   }
 };
 
@@ -25,4 +25,4 @@ export function getStories() {
   };
 }
 
-export default createReducer(initialState, homeReducer);
+export default createReducer(initialState, storiesReducer);

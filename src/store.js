@@ -5,4 +5,4 @@ export function createReducer(initialState, reducers) {
   }
 }
 
-export { homeDuck as home } from 'pages/home/home';
+export { storiesDuck as stories } from 'pages/stories/stories';

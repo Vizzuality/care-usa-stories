@@ -2,7 +2,7 @@ import React from "react";
 import StoryCard from "./story-card.component";
 import Masonry from 'react-masonry-infinite';
 
-class Stories extends React.Component {
+class StoriesGrid extends React.Component {
   getImage = (pictures) => {
     if (!pictures) return;
     const images = this.props.stories ? this.props.stories.picture : {};
@@ -62,4 +62,4 @@ class Stories extends React.Component {
   }
 }
 
-export default Stories;
+export default StoriesGrid;
