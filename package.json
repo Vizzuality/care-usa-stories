@@ -4,12 +4,15 @@
   "private": true,
   "dependencies": {
     "classnames": "2.2.5",
+    "jquery": "^3.2.1",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "4.1.2",
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-masonry-infinite": "^1.2.1",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "react-slick": "^0.15.4",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "test": "react-scripts test --env=jsdom",

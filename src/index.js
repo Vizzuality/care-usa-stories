@@ -3,5 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './app';
 import registerServiceWorker from './registerServiceWorker';
 
+import 'slick-carousel/slick/slick.css';
+
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
