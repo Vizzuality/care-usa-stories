@@ -2,12 +2,14 @@
 ================================================= */
 form.newsletter-form {
   display: flex;
+  background-color: $bg-primary-color;
   max-width: 690px;
   align-items: center;
-  margin: 55px auto 50px;
+  margin: 55px auto 0;
+  padding-bottom: 50px;
   @media only screen and (max-width: $breakpoint-mobile) {
     flex-direction: column;
-    margin-bottom: 48px;
+    padding-bottom: 48px;
   }
   h4 {
     @media only screen and (max-width: $breakpoint-mobile) {

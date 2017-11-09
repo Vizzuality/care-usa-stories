@@ -1,6 +1,7 @@
 import config from './components/constants/configuration';
 import Navigation from './components/Navigation';
 import Services from './components/Services';
+import Helpers from './components/Helpers';
 
 /**
  * Initialize main banner slider
@@ -12,6 +13,15 @@ $(`.${config.selectors.slidesHolder}`).slick(config.slick);
  */
 $(`.${config.selectors.recentSlidesHolder}`).slick(config.recentSlick);
 
+/**
+ * Initialize main recent stories slider
+ */
+$(`.${config.selectors.gallerySlick}`).slick(config.gallerySlick);
+
+/**
+ * Initialize main recent stories slider
+ */
+$(`.${config.selectors.gallerySlickMiniature}`).slick(config.gallerySlickMiniature);
 /**
  * Initialize main article grid
  */
@@ -25,21 +35,3 @@ new Navigation();
  * Initialize services hover handlers
  */
 new Services();
-
-/**
- * Video controls
- */
-
-var video = $("video"),
-    pauseButton = $("#pause");
-pauseButton.bind('click', function() {
-    if (video.get(0).paused) {
-        video.get(0).play();
-        pauseButton.html("&#x25fC");
-    } else {
-        video.get(0).pause();
-        pauseButton.html("&#x25BA");
-    }
-});
-
-

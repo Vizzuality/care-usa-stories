@@ -5,7 +5,14 @@ export default {
         recentSlick: 'slick',
         header: 'home',
         articleList: 'article-list',
-        contactForm: 'contact-user-data'
+        contactForm: 'contact-user-data',
+        gallerySlick: 'main-gallery-box',
+        gallerySlickMiniature: 'slider-nav-thumbnails'
+    },
+    helpers: {
+        block: 'banner-box',
+        galleryWidget: 'gallery-widget-container',
+        articleList: 'list'
     },
     navigation: {
         brakePoint: 768,
@@ -53,6 +60,22 @@ export default {
                 }
             }
         ]
+    },
+    gallerySlick: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: false,
+        asNavFor: '.slider-nav-thumbnails',
+    },
+    gallerySlickMiniature: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        vertical: true,
+        asNavFor: '.main-gallery-box',
+        dots: false,
+        arrows: false,
+        focusOnSelect: true
     },
     masonry: {
         isFitWidth: true,
