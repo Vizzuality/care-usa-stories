@@ -4,7 +4,7 @@ import homeDuck, { getStories } from './home.duck';
 
 
 function mapStateToProps({ home }) {
-  return { stories: home.stories };
+  return { stories: home.stories.entities };
 }
 export { homeDuck }
 export default connect(mapStateToProps, { getStories })(HomeComponent);

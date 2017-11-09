@@ -1,7 +1,7 @@
 import { schema } from 'normalizr';
 
 const contentful2Normalizr = {
-  idAttribute: value => console.log(value) || value.sys.id,
+  idAttribute: value => value.sys.id,
   processStrategy: value => ({ ...value.fields })
 };
 
