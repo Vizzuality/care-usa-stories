@@ -553,6 +553,7 @@ cite {
         .article-container .grid .article-list {
           max-width: 264px; } }
       .article-container .grid .article-list .box {
+        height: 650px;
         max-width: 324px; }
         @media only screen and (max-width: 750px) {
           .article-container .grid .article-list .box {
@@ -566,35 +567,38 @@ cite {
             display: block; }
           .article-container .grid .article-list .box .holder .article-content {
             position: relative; }
-            .article-container .grid .article-list .box .holder .article-content .article-layer p {
-              display: none;
-              position: absolute;
-              left: 0;
-              right: 0;
-              top: 0;
-              height: 100%;
-              background-color: rgba(245, 102, 8, 0.79);
-              cursor: pointer; }
-              .article-container .grid .article-list .box .holder .article-content .article-layer p .btn {
+            .article-container .grid .article-list .box .holder .article-content .article-layer {
+              max-height: 350px;
+              overflow: hidden; }
+              .article-container .grid .article-list .box .holder .article-content .article-layer p {
+                display: none;
                 position: absolute;
                 left: 0;
                 right: 0;
-                bottom: 80px;
-                width: 190px;
-                height: 44px;
-                margin: 0 auto;
-                background-color: transparent;
-                border: 1px solid #fff;
-                font-family: "MontserratSemiBold";
-                font-size: 12px;
-                color: #fff;
-                line-height: 44px; }
-                .article-container .grid .article-list .box .holder .article-content .article-layer p .btn:hover {
-                  background-color: #fff;
-                  color: #f46508;
-                  transition: 0.4s linear; }
-            .article-container .grid .article-list .box .holder .article-content .article-layer:not(.no-image) {
-              position: relative; }
+                top: 0;
+                height: 100%;
+                background-color: rgba(245, 102, 8, 0.79);
+                cursor: pointer; }
+                .article-container .grid .article-list .box .holder .article-content .article-layer p .btn {
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  bottom: 80px;
+                  width: 190px;
+                  height: 44px;
+                  margin: 0 auto;
+                  background-color: transparent;
+                  border: 1px solid #fff;
+                  font-family: "MontserratSemiBold";
+                  font-size: 12px;
+                  color: #fff;
+                  line-height: 44px; }
+                  .article-container .grid .article-list .box .holder .article-content .article-layer p .btn:hover {
+                    background-color: #fff;
+                    color: #f46508;
+                    transition: 0.4s linear; }
+              .article-container .grid .article-list .box .holder .article-content .article-layer:not(.no-image) {
+                position: relative; }
             .article-container .grid .article-list .box .holder .article-content figcaption {
               background-color: #fff;
               border: 1px solid #e6e6e6;
@@ -632,6 +636,8 @@ cite {
               max-height: 457px; }
               .article-container .grid .article-list .box .holder .article-content .no-image + figcaption h4 {
                 margin-bottom: 49px; }
+        .article-container .grid .article-list .box.donate-form {
+          height: 276px; }
 
 /* Banner slider
 ================================================= */

@@ -22,6 +22,7 @@
         max-width: 264px;
       }
       .box {
+        height: 650px;
         max-width: 324px;
         @media only screen and (max-width: $breakpoint-s) {
           max-width: 264px;
@@ -39,6 +40,8 @@
           .article-content {
             position: relative;
             .article-layer {
+              max-height: 350px;
+              overflow: hidden;
               p {
                 display: none;
                 position: absolute;
@@ -122,6 +125,10 @@
               }
             }
           }
+        }
+
+        &.donate-form {
+          height: 276px;
         }
       }
     }

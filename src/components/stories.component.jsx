@@ -1,5 +1,6 @@
 import React from "react";
 import StoryCard from "./story-card.component";
+import Masonry from 'react-masonry-infinite';
 
 const cards = [
   {
@@ -82,33 +83,40 @@ class Stories extends React.Component {
         <h3>Total Stories</h3>
         <span className="group">(20 Stories)</span>
         <div className="grid">
-          <div className="article-list">
-            {cards.map((storycard, key) => (<StoryCard key={`${key}-story-card`} {...storycard} />))}
-            <form
-              id="quickDonate"
-              className="donate-form box"
-              action="#"
-              method="post"
-            >
-              <h4 className="form-heading">Quick Donate</h4>
-              <fieldset className="holder">
-                <input
-                  id="donateField"
-                  name="donateInput"
-                  defaultValue
-                  placeholder="$"
-                />
-                <button
-                  id="donateSubmit"
-                  className="button"
-                  type="button"
-                  name="donateBtn"
-                >
-                  DONATE
-                </button>
-              </fieldset>
-            </form>
-          </div>
+          <Masonry
+            pack={true}
+            className="article-list"
+          >
+            {
+              [...cards.map((storycard, key) => (
+                <StoryCard key={`${key}-story-card`} {...storycard} />)),
+              (<form
+                key="quickDonate"
+                id="quickDonate"
+                className="donate-form box"
+                action="#"
+                method="post"
+              >
+                <h4 className="form-heading">Quick Donate</h4>
+                <fieldset className="holder">
+                  <input
+                    id="donateField"
+                    name="donateInput"
+                    defaultValue
+                    placeholder="$"
+                  />
+                  <button
+                    id="donateSubmit"
+                    className="button"
+                    type="button"
+                    name="donateBtn"
+                  >
+                    DONATE
+                  </button>
+                </fieldset>
+              </form>)]
+            }
+          </Masonry>
           <a className="more" href="#">
             SHOW MORE STORIES
           </a>
