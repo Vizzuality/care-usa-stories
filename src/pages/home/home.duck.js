@@ -15,12 +15,13 @@ const homeReducer = {
   }
 };
 
-function getStories() {
+export function getStories() {
   return (dispatch) => {
     contentful.getEntries({ content_type: 'story', order: 'fields.title' })
-      .then((entries) => {
-        dispatch({ type: GET_STORIES, payload: normalize(entries, storiesSchema) })
-      });
+      .then(({ items }) => dispatch({
+        type: GET_STORIES,
+        payload: normalize(items, storiesSchema)
+      }));
   };
 }
 

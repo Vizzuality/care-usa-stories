@@ -5,4 +5,4 @@ export function createReducer(initialState, reducers) {
   }
 }
 
-export { homeDuck } from 'pages/home/home';
+export { homeDuck as home } from 'pages/home/home';

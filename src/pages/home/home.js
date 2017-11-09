@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import HomeComponent from './home.component';
-import homeDuck from './home.duck';
+import homeDuck, { getStories } from './home.duck';
 
+
+function mapStateToProps({ home }) {
+  return { stories: home.stories };
+}
 export { homeDuck }
-export default connect(null, null)(HomeComponent);
+export default connect(mapStateToProps, { getStories })(HomeComponent);

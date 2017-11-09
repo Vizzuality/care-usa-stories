@@ -1,9 +1,12 @@
 import { schema } from 'normalizr';
 
 const contentful2Normalizr = {
-  idAttribute: value => value.sys.id,
+  idAttribute: value => console.log(value) || value.sys.id,
   processStrategy: value => ({ ...value.fields })
 };
 
-const story = schema.Entity({}, contentful2Normalizr);
-export const stories = [story];
+const file = new schema.Entity('file', {}, contentful2Normalizr);
+const picture = new schema.Entity('picture', { file }, contentful2Normalizr);
+const story = new schema.Entity('story', { pictures: [picture] }, contentful2Normalizr);
+
+export const storiesSchema = [story];
