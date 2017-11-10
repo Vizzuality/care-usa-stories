@@ -38,7 +38,7 @@ class Banner extends React.Component {
                   <span>Emergency & disaster</span>
                   <h1>Reaping the Benefits of training.</h1>
                   <div>
-                    <a href>
+                    <a>
                       <img
                         className="rounded-img"
                         src="/images/author.png"
@@ -74,7 +74,7 @@ class Banner extends React.Component {
                   <span>Emergency & disaster</span>
                   <h1>Reaping the Benefits of training.</h1>
                   <div>
-                    <a href>
+                    <a>
                       <img
                         className="rounded-img"
                         src="/images/author.png"
@@ -110,7 +110,7 @@ class Banner extends React.Component {
                   <span>Emergency & disaster</span>
                   <h1>Reaping the Benefits of training.</h1>
                   <div>
-                    <a href>
+                    <a>
                       <img
                         className="rounded-img"
                         src="/images/author.png"

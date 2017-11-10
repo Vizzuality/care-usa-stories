@@ -20,6 +20,7 @@ class StoriesGrid extends React.Component {
         <span className="group">({cards.length} Stories)</span>
         <div className="grid">
           <Masonry
+            loadMore={() => (null)}
             pack={true}
             className="article-list"
           >
@@ -52,7 +53,7 @@ class StoriesGrid extends React.Component {
               </form>)]
             }
           </Masonry>
-          {false && <a className="more" href="#">
+          {false && <a className="more">
             SHOW MORE STORIES
           </a>
           }

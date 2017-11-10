@@ -6,7 +6,7 @@ class Header extends React.Component {
       <header id="home" className="main-head-holder">
         <div className="main-head  container">
           <div className="logo-wrap">
-            <a href className="logo">
+            <a className="logo">
               <span className="hidden">CARE USA</span>
               <img
                 alt="Care"
@@ -26,22 +26,22 @@ class Header extends React.Component {
           <nav className="main-menu">
             <ul className="main-menu-list">
               <li className="menu-list-item">
-                <a href="//worldofimpact.care.org" className="menu-link">
+                <a href="worldofimpact.care.org" className="menu-link">
                   MAP OF IMPACT
                 </a>
               </li>
               <li className="menu-list-item">
-                <a href="index.html" className="menu-link active">
+                <a href="/" className="menu-link active">
                   STORIES
                 </a>
               </li>
               <li className="menu-list-item">
-                <a href className="menu-link">
+                <a className="menu-link">
                   ABOUT
                 </a>
               </li>
               <li className="menu-list-item">
-                <a href className="menu-link button" title="Donate">
+                <a className="menu-link button" title="Donate">
                   DONATE
                 </a>
               </li>

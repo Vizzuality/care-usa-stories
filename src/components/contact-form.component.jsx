@@ -5,7 +5,7 @@ class ContactForm extends React.Component {
     return (
       <form
         id="mainNewsletter"
-        className="newsletter-form box"
+        className="newsletter-form"
         action="#"
         method="post"
       >

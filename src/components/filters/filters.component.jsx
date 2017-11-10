@@ -39,7 +39,7 @@ class Filters extends React.Component {
             </div>
             <div className="field select">
               <select id="selectCategory" title="Select Category">
-                <option value disabled selected>
+                <option value disabled>
                   Categories
                 </option>
                 <option value>Climate Change</option>
@@ -49,7 +49,7 @@ class Filters extends React.Component {
             </div>
             <div className="field select">
               <select id="selectCountry" title="Select Your Country">
-                <option value disabled selected>
+                <option value disabled>
                   Country
                 </option>
                 <option value="AFG">Afghanistan</option>
@@ -326,7 +326,7 @@ class Filters extends React.Component {
             </div>
             <div className="field select">
               <select id="mostRecentFilter" title="Most recent">
-                <option value disabled selected>
+                <option value disabled>
                   Most Recent
                 </option>
                 <option value>Story 1</option>
