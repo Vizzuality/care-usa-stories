@@ -4,7 +4,7 @@ import Banner from "components/banner.component";
 import Filters from "components/filters.component";
 import StoriesGrid from "components/stories-grid.component";
 import RecentStories from "components/recent-stories.component";
-import ContactForm from "components/contact-form.component";
+import Newsletter from "components/newsletter.component";
 
 class Stories extends React.Component {
 
@@ -19,7 +19,7 @@ class Stories extends React.Component {
         <Filters />
         <StoriesGrid stories={this.props.data} />
         <RecentStories />
-        <ContactForm />
+        <Newsletter />
       </main>
     );
   }
