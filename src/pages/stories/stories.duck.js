@@ -19,7 +19,11 @@ const storiesReducer = {
 
 // Navigation pre-fetching thunks
 export async function getStoriesThunk(dispatch) {
-  const { items } = await contentful.getEntries({ content_type: 'story', order: 'fields.title' });
+  const { items } = await contentful.getEntries({
+    content_type: 'story',
+    order: 'fields.story_date',
+    limit: 20
+  });
   dispatch({
     type: GET_STORIES,
     payload: normalize(items, storiesSchema)

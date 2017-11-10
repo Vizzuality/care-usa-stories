@@ -1,7 +1,7 @@
 import { connectRoutes, redirect } from 'redux-first-router'
 import createHistory from 'history/createBrowserHistory'
 
-import { getCategories } from 'components/filters/filters.duck';
+import { getCategories, getCountries } from 'components/filters/filters.duck';
 import { getStoriesThunk } from 'pages/stories/stories.duck';
 
 const history = createHistory();
@@ -10,6 +10,8 @@ const HOME = 'location/HOME';
 const STORIES = 'location/STORIES';
 const STORIES_SLUG = 'location/STORIES_SLUG';
 
+const dispatchPreFetchThunks = (...thunks) => dispatch => thunks.forEach(thunk => thunk(dispatch));
+
 const routes = {
   [HOME]: {
     path: '/',
@@ -17,7 +19,7 @@ const routes = {
   },
   [STORIES]: {
     path: '/stories',
-    thunk: dispatch => (getStoriesThunk(dispatch), getCategories(dispatch))
+    thunk: dispatchPreFetchThunks(getStoriesThunk, getCategories, getCountries)
   },
   [STORIES_SLUG]: '/stories/:slug'
 };

@@ -9,6 +9,8 @@ const file = new schema.Entity('file', {}, contentful2Normalizr);
 const picture = new schema.Entity('picture', { file }, contentful2Normalizr);
 const story = new schema.Entity('story', { pictures: [picture] }, contentful2Normalizr);
 const category = new schema.Entity('category', {}, contentful2Normalizr);
+const country = new schema.Entity('country', {}, contentful2Normalizr);
 
 export const stories = [story];
 export const categories = [category];
+export const countries = [country];
