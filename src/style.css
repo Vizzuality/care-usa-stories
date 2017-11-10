@@ -922,6 +922,8 @@ input[type="search"]::-webkit-search-results-decoration {
       .banner .slick-dots li.slick-active button ~ button,
       .banner .slick-dots li.slick-active button ~ button:active {
         background-position: 11px 0; }
+    .banner .slick-dots li::before {
+      content: none; }
 
 .banner .slide {
   position: relative; }
