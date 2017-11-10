@@ -49,7 +49,7 @@ class Filters extends React.Component {
               <input
                 id="formSearch"
                 type="search"
-                name="search"
+                name="q"
                 placeholder="Search by..."
                 onInput={this.onFilterChange}
               />

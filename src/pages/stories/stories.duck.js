@@ -23,10 +23,12 @@ export async function getStoriesThunk(dispatch, getState) {
   const keyMap = {
     category: 'fields.sectorList[in]',
     country: 'fields.countryList[in]',
-    search: 'query'
+    q: 'query'
   };
   const filters = Object.keys(query).reduce((acc, next) => {
-    if (query[next]) return { ...acc, [keyMap[next]]: query[next] };
+    const value = query[next];
+    const key = keyMap[next];
+    if (key && value) return { ...acc, [key]: value };
     return acc;
   }, {});
   const { items } = await contentful.getEntries({
