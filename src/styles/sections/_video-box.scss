@@ -1,10 +1,15 @@
+/* Video widget
+================================================= */
 .video-container {
-  width: 420px;
-  float: left;
-  margin-right: 11%;
+  min-width: 420px;
+  max-width: 420px;
+  margin-right: 10%;
   .video-box {
     position: relative;
     height: 270px;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      height: 190px;
+    }
     span#pause {
       position: absolute;
       bottom: 1px;
@@ -12,22 +17,68 @@
       display: block;
       height: 50px;
       width: 50px;
+      font-size: 16px;
       line-height: 50px;
       text-align: center;
       background-color: #f56608;
+      cursor: url('#{$path-images}helpers/pointer.png'), pointer;
     }
     video {
       height: 270px;
+      @media only screen and (max-width: $breakpoint-tablet) {
+        height: 190px;
+      }
     }
   }
-  .video-content {
-    padding: 55px 65px 125px;
+  .video-content-area {
+    padding: 44px 65px 105px;
     box-shadow: 0 0 10px 5px rgba(138, 157, 166, 0.1);
     p {
       color: #68696b;
       font-family: $karla-b;
       font-size: 16px;
       line-height: 34px;
+    }
+  }
+  @media only screen and (max-width: $breakpoint-tablet) {
+    min-width: 290px;
+    max-width: 290px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    .video-content-area {
+      padding: 30px 35px 45px;
+      p {
+        font-size: 14px;
+        line-height: 32px;
+      }
+    }
+    .video-box span#pause {
+      bottom: 2px;
+    }
+  }
+}
+//wrapper
+.article-expanded-holder.video-content {
+  @media only screen and (max-width: $breakpoint-mobile) {
+    flex-direction: column-reverse;
+    .video-container {
+      margin-left: auto;
+      margin-right: auto;
+      &+.std {
+        max-width: 100%;
+        padding-top: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        p {
+          font-size: 14px;
+          line-height: 32px;
+          &.marked {
+            padding-right: 0;
+            font-size: 12px;
+            line-height: 26px;
+          }
+        }
+      }
     }
   }
 }

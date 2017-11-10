@@ -1,45 +1,150 @@
+/* Article
+================================================= */
 .article-expanded-container {
-  padding-bottom: 40px;
+  @media only screen and (max-width: $breakpoint-mobile) {
+    padding-bottom: 0;
+  }
   .article-expanded-holder {
-    @extend %clearfix;
+    display: flex;
     margin-top: 85px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 40px;
     max-width: 1280px;
-   .quote-area {
-     position: relative;
-     float: right;
-     max-height: 840px;
-     max-width: 525px;
-     background-image: linear-gradient(180deg, #4b565d 0%, #0d212e 100%);
-     figcaption {
-       position: absolute;
-       left: 0;
-       right: 0;
-       bottom: 0;
-       padding-top: 90px;
-       padding-left: 75px;
-       padding-bottom: 45px;
-       background-color: rgba(5, 32, 50, 0.63);
-       blockquote {
-         position: relative;
-         max-width: 295px;
-         &:before {
-           content: '';
-           display: block;
-           width: 15px;
-           height: 5px;
-           background-color: #f46508;
-           position: absolute;
-           top: -27px;
-         }
-       }
-     }
-     &+.std {
-       width: 36.3%;
-       margin-left: 11%;
-       padding-top: 0;
-     }
-   }
+    @media only screen and (max-width: $breakpoint-mobile) {
+      margin-top: 25px;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .video-container {
+      &+.std {
+        padding-top: 55px;
+        max-width: 610px;
+        padding-right: 20px;
+      }
+    }
+    .quote-area {
+      position: relative;
+      max-height: 840px;
+      min-width: 525px;
+      margin-top: 12px;
+      background-image: linear-gradient(180deg, #4b565d 0%, #0d212e 100%);
+      figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-top: 82px;
+        padding-left: 78px;
+        padding-bottom: 35px;
+        background-color: rgba(5, 32, 50, 0.63);
+        blockquote {
+          position: relative;
+          max-width: 295px;
+          &:before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 5px;
+            background-color: #f46508;
+            position: absolute;
+            top: -27px;
+          }
+        }
+      }
+      &+.std {
+        max-width: 500px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-right: 15px;
+      }
+    }
+    &.quote-content {
+      margin-top: 12%;
+      flex-direction: row-reverse;
+      //wrapper
+      @media only screen and (max-width: $breakpoint-tablet) {
+        .quote-area {
+          min-width: 290px;
+          max-width: 290px;
+          max-height: 428px;
+          margin-top: 35px;
+          margin-left: auto;
+          margin-right: auto;
+          img {
+            max-height: 428px;
+            width: 100%;
+          }
+          figcaption {
+            padding-left: 34px;
+            padding-top: 90px;
+            padding-bottom: 35px;
+            blockquote {
+              p {
+                font-size: 14px;
+                line-height: 30px;
+              }
+              cite {
+                margin-top: 30px;
+                font-size: 14px;
+                line-height: 34px;
+              }
+            }
+          }
+        }
+      }
+      //wrapper
+      @media only screen and (max-width: $breakpoint-mobile) {
+        flex-direction: column-reverse;
+        .std {
+          max-width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-left: auto;
+          margin-right: auto;
+          p {
+            font-size: 14px;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+  }
+  &.gallery-widget-content {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1030px;
+    margin: 0 auto;
+    @media only screen and (min-width: $breakpoint-mobile +1px) and(max-width: $breakpoint-laptop) {
+      padding: 0 20px;
+    }
+    .article-expanded-holder {
+      max-width: 100%;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        margin-top: 0;
+      }
+    }
+    .gallery-widget-container {
+      & + .article-expanded-holder {
+        flex-direction: column;
+        position: relative;
+        margin-top: 0;
+        margin-right: 40px;
+        border-top: 1px solid #e6e6e6;
+        .std {
+          padding-right: 15%;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          border-left: 1px solid #e6e6e6;
+          height: 100%;
+          padding-top: 19%;
+          margin-top: -19%;
+        }
+      }
+    }
   }
 }

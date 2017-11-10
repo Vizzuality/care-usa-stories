@@ -28,6 +28,7 @@ select { //prevent outline
 }
 
 button {
+  cursor: url('#{$path-images}helpers/pointer.png'), pointer;
   &.button {
     min-width: 252px;
     padding: 0 10px;
@@ -57,10 +58,24 @@ img, object, video, embed {
 }
 body {
   width: 100%;
-  background-color: $bg-primary-color;
+  background-color: #fff;
   font-family: $mont-l, sans-serif;
   color: $primary-text-color;
   overflow-x: hidden;
+  .page-wrapper{
+    position: relative;
+    background-color: $bg-primary-color;
+  }
+  .mask{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    height: 105%;
+    background: $brand-secondary-color;
+    z-index:10;
+  }
   a {
     color: $secondary-text-color;
     font-family: $mont-sb;
@@ -68,7 +83,7 @@ body {
     line-height: 24px;
     text-transform: uppercase;
     text-decoration: none;
-    cursor: pointer;
+    cursor: url('#{$path-images}helpers/pointer.png'), pointer;
     &.active {
       color: $primary-text-color;
     }
@@ -116,23 +131,101 @@ body {
       color: $brand-primary-color;
       @extend %transition;
     }
+    &.map-link {
+      margin-top: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 35px;
+      display: block;
+      border-top: 1px solid #e6e6e6;
+      span {
+        font-size: 16px;
+        line-height: 18px;
+        font-family: $mont-sb;
+      }
+      i {
+        font-size: 22px;
+        padding-right: 6px;
+        vertical-align: sub;
+      }
+      &.__in-article {
+        margin-top: 0;
+        padding-top: 28px;
+        padding-left: 0;
+        padding-bottom: 60px;
+        border: 0;
+        @media only screen and (max-width: $breakpoint-mobile) {
+          padding-bottom: 38px;
+        }
+      }
+    }
   }
   .std {
-    padding-top: 55px;
     p {
       font-family: $karla-r;
       font-size: 16px;
       line-height: 34px;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
     }
     .marked {
       color: $brand-primary-color;
       font-family: $mont-l;
       font-size: 18px;
       line-height: 35px;
+      padding-right: 20px;
+      &+p:not(.marked) {
+        padding-top: 20px;
+      }
+    }
+    @media only screen and (max-width: $breakpoint-mobile) {
+      max-width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      p {
+        font-size: 14px;
+        line-height: 32px;
+        &.marked {
+          padding-right: 0;
+          font-size: 12px;
+          line-height: 26px;
+        }
+      }
+    }
+    ul {
+      padding-top: 50px;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        padding-top: 40px;
+      }
     }
   }
-
+  li:not(.menu-list-item) {
+    position: relative;
+    color: $paragraph-color;
+    font-family: $karla-r;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 34px;
+    padding-bottom: 20px;
+    padding-left: 26px;
+    padding-right: 10px;
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: $brand-primary-color;
+    }
+    @media only screen and (max-width: $breakpoint-mobile) {
+      font-size: 14px;
+      line-height: 32px;
+      padding-left: 20px;
+      padding-right: 0;
+    }
+  }
   span {
     color: $brand-primary-color;
     font-family: $mont-r;
@@ -145,6 +238,7 @@ body {
     &.author {
       display: block;
       color: $primary-text-color;
+      line-height: 28px;
     }
     &.country {
       display: block;
@@ -219,6 +313,12 @@ body {
       line-height: 22px;
     }
   }
+  h5 {
+    color: #ffffff;
+    font-family: $mont-sb;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
   p {
     color: $paragraph-color;
     font-family: $karla-r;
@@ -251,10 +351,10 @@ body {
     }
   }
   input {
-     @include input-placeholder {
-       color: $secondary-text-color;
-       font-family: $mont-l;
-       line-height: 24px;
+    @include input-placeholder {
+      color: $secondary-text-color;
+      font-family: $mont-l;
+      line-height: 24px;
     }
   }
   select {
@@ -278,13 +378,14 @@ body {
 blockquote {
   p {
     color: #ffffff;
-    font-family: $mont-r;
+    font-family: $mont-l;
     font-size: 18px;
     line-height: 35px;
-    padding-bottom: 60px;
   }
 }
 cite {
+  display: block;
+  margin-top: 45px;
   color: #ffffff;
   font-family: $karla-r;
   font-size: 16px;
