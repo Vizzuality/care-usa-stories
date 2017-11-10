@@ -1,6 +1,6 @@
 import React from "react";
 
-class DetailPost extends React.Component {
+class ArticlePost extends React.Component {
   render() {
     return (
       <div className="article-expanded-holder">
@@ -54,4 +54,4 @@ class DetailPost extends React.Component {
   }
 }
 
-export default DetailPost;
+export default ArticlePost;
