@@ -2,13 +2,22 @@ import { normalize } from 'normalizr';
 import { createReducer } from 'store';
 import contentful from 'contentful-client';
 import { categories as categoriesSchema, countries as coutriesSchema } from 'schemas';
+import { STORIES } from 'router';
+import pickBy from 'lodash/pickBy';
+import identity from 'lodash/identity';
 
 const GET_CATEGORIES = 'filters/GET_CATEGORIES';
 const GET_COUNTRIES = 'filters/GET_COUNTRIES';
 
 const initialState = {
-  categories: {},
-  countries: {}
+  categories: {
+    entities: {},
+    result: []
+  },
+  countries: {
+    entities: {},
+    result: []
+  }
 };
 
 const filtersReducer = {
@@ -20,6 +29,15 @@ const filtersReducer = {
   }
 };
 
+// Action creators
+export function updateFilters(filters) {
+  return {
+    type: STORIES,
+    payload: {
+      query: pickBy(filters, identity)
+    }
+  };
+}
 
 // Navigation pre-fetching thunks
 export async function getCategories(dispatch) {
