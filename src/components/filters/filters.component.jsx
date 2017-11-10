@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 class Filters extends React.Component {
 
@@ -19,10 +23,18 @@ class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.onFilterChange = this.onFilterChange.bind(this);
+    this.onDateChange = this.onDateChange.bind(this);
     this.updateFilters = debounce(this.props.updateFilters, 350);
   }
 
+  onDateChange(moment) {
+    const { query } = this.props;
+    const date = moment.format('YYYY-MM-DD');
+    this.updateFilters({ ...query, date })
+  }
+
   onFilterChange(e) {
+    console.log(e)
     const { query } = this.props;
     const { value, name } = e.target;
     this.updateFilters({ ...query, [name]: value });
@@ -30,6 +42,7 @@ class Filters extends React.Component {
 
   render() {
     const { categories, countries, query } = this.props;
+    const selectedDate = query.date ? moment(query.date, 'YYYY-MM-DD') : moment();
     return (
       <section className="multi-search-container">
         <input
@@ -102,12 +115,12 @@ class Filters extends React.Component {
               </select>
             </div>
             <div className="field date">
-              <input
-                id="dateFilter"
-                name="dateInput"
-                placeholder="20-04-2017"
+              <DatePicker
+                dateFormat="YYYY-MM-DD"
+                selected={selectedDate}
+                onChange={this.onDateChange}
               />
-              <i className="icon-calendar" />
+              <i className="icon-calendar"></i>
             </div>
             <div className="field select">
               <select id="mostRecentFilter" title="Most recent">

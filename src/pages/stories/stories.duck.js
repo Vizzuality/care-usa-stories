@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { normalize } from 'normalizr';
 import { createReducer } from 'store';
 import contentful from 'contentful-client';
@@ -23,10 +24,11 @@ export async function getStoriesThunk(dispatch, getState) {
   const keyMap = {
     category: 'fields.sectorList[in]',
     country: 'fields.countryList[in]',
-    q: 'query'
+    q: 'query',
+    date: 'fields.story_date[lte]'
   };
   const filters = Object.keys(query).reduce((acc, next) => {
-    const value = query[next];
+    const value = next === 'date' ? moment(query[next], 'YYYY-MM-DD').toISOString() : query[next];
     const key = keyMap[next];
     if (key && value) return { ...acc, [key]: value };
     return acc;
