@@ -1,6 +1,7 @@
 import { connectRoutes, redirect } from 'redux-first-router'
 import createHistory from 'history/createBrowserHistory'
 
+import { getCategories } from 'components/filters/filters.duck';
 import { getStoriesThunk } from 'pages/stories/stories.duck';
 
 const history = createHistory();
@@ -16,7 +17,7 @@ const routes = {
   },
   [STORIES]: {
     path: '/stories',
-    thunk: getStoriesThunk
+    thunk: dispatch => (getStoriesThunk(dispatch), getCategories(dispatch))
   },
   [STORIES_SLUG]: '/stories/:slug'
 };

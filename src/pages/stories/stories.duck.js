@@ -1,7 +1,7 @@
 import { normalize } from 'normalizr';
 import { createReducer } from 'store';
 import contentful from 'contentful-client';
-import { storiesSchema } from 'schemas';
+import { stories as storiesSchema } from 'schemas';
 
 const GET_STORIES = 'stories/GET_STORIES';
 
@@ -16,6 +16,8 @@ const storiesReducer = {
   }
 };
 
+
+// Navigation pre-fetching thunks
 export async function getStoriesThunk(dispatch) {
   const { items } = await contentful.getEntries({ content_type: 'story', order: 'fields.title' });
   dispatch({
