@@ -17,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = ({ location }) => ({ page: location.type });
 
 const Pages = ({ page, onNotFound }) => {
+  alert(page)
   if (page === NOT_FOUND) onNotFound();
   return createElement(pages[page]);
 };

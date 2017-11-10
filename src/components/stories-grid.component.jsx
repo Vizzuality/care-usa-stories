@@ -13,7 +13,7 @@ class StoriesGrid extends React.Component {
 
   render() {
     const stories = this.props.stories ? this.props.stories.story : {};
-    const cards = Object.values(stories);
+    const cards = stories ? Object.values(stories) : [];
     return (
       <section className="article-container">
         <h3>Total Stories</h3>

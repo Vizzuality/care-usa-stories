@@ -6,12 +6,13 @@ import { storiesSchema } from 'schemas';
 const GET_STORIES = 'stories/GET_STORIES';
 
 const initialState = {
-  data: {}
+  entities: {},
+  result: []
 };
 
 const storiesReducer = {
   [GET_STORIES](state, action) {
-    return { ...state, data: action.payload };
+    return { ...state, ...action.payload };
   }
 };
 
