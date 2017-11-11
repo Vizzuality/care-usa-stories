@@ -26,7 +26,13 @@ class StoriesGrid extends React.Component {
           >
             {
               [...cards.map((storycard, key) => (
-                <StoryCard key={`${key}-story-card`} {...storycard} image={this.getImage(storycard.pictures)} />)),
+                <StoryCard
+                  key={`${key}-story-card`}
+                  {...storycard}
+                  image={this.getImage(storycard.pictures)}
+                  sectorList={storycard.sectorList}
+                />
+              )),
               (<form
                 key="quickDonate"
                 id="quickDonate"
