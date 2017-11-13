@@ -2,15 +2,16 @@ import React from "react";
 import StoryCard from "../story-card.component";
 import Masonry from 'react-masonry-infinite';
 
-function StoriesGrid({ cards }) {
+function StoriesGrid({ cards, setCardOffset, cardOffset, cardLimit }) {
   return (
     <section className="article-container">
       <h3>Total Stories</h3>
       <span className="group">({cards.length} Stories)</span>
       <div className="grid">
         <Masonry
-          loadMore={() => (null)}
           pack={true}
+          hasMore={false}
+          loadMore={() => (null)}
           className="article-list"
         >
           {
@@ -46,7 +47,8 @@ function StoriesGrid({ cards }) {
               </form>)]
           }
         </Masonry>
-        {false && <a className="more">
+        {(cardOffset < cardLimit) &&
+          <a className="more" onClick={() => setCardOffset(cardOffset + 5)}>
           SHOW MORE STORIES
         </a>
         }

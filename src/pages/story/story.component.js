@@ -4,14 +4,14 @@ import DetailTwo from './detail-two/detail-two.component';
 import DetailThree from './detail-three/detail-three.component';
 
 function Story(props) {
-  const { template, ...rest } = props;
-  const Detail = {
+  const { template, image, story } = props;
+  const Detail = (template && image) ? {
     photoStory: DetailOne,
     videoStory: DetailTwo
-  }[template];
+  }[template] : DetailThree;
   return (
     <main id="pageContent" className="page-wrapper home">
-      {template && <Detail {...rest} />}
+      {template && <Detail image={image} story={story} />}
     </main>
   );
 }

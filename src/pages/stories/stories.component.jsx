@@ -13,11 +13,12 @@ class Stories extends React.Component {
   };
 
   render() {
+    const cardLimit = Object.values((this.props.entities.story || {})).length;
     return (
       <main id="pageContent" className="page-wrapper home">
         <Banner />
         <Filters />
-        <StoriesGrid entities={this.props.entities} />
+        <StoriesGrid cardLimit={cardLimit} entities={this.props.entities} />
         <RecentStories />
         <Newsletter />
       </main>

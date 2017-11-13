@@ -36,8 +36,7 @@ export async function getStoriesThunk(dispatch, getState) {
   const { items } = await contentful.getEntries({
     ...filters,
     content_type: 'story',
-    order: 'fields.story_date',
-    limit: 20
+    order: 'fields.story_date'
   });
   dispatch({
     type: GET_STORIES,
