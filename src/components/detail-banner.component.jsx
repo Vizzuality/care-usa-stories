@@ -3,7 +3,7 @@ import Box from "./box.component";
 import DetailSwitch from "./detail-switch.component";
 
 function DetailBanner (props) {
-  const { alt, src } = props;
+  const { url, filename } = props;
   return (
     <section className="banner-story-container collapse">
       <div className="banner-holder">
@@ -11,12 +11,12 @@ function DetailBanner (props) {
           <picture>
             <source
               media="(max-width: 767px)"
-              srcSet={src}
+              srcSet={`https://${url}`}
             />
             <img
               className="banner-img"
-              src={src}
-              alt={alt}
+              src={`https://${url}`}
+              alt={filename}
             />
           </picture>
           <Box/>
