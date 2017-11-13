@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import Link from 'redux-first-router-link';
 
 const getHeight = (w,h) => {
   const delta = w && h ? (Math.round((w/h) * 10) / 10) : null;
@@ -19,7 +20,7 @@ const StoryCard =  ({ link, image, sectorList, location, title, summary }) => {
   const height = getHeight(dimensions.width, dimensions.height);
   return (
     <article className="article-item box" style={{ height: (height + 285) }}>
-      <a className="holder" href={link}>
+      <Link className="holder" to={link}>
         <figure className="article-content">
           <div
             className={cx('article-layer', { 'no-image': !image })}
@@ -45,7 +46,7 @@ const StoryCard =  ({ link, image, sectorList, location, title, summary }) => {
             <p>{summary}</p>
           </figcaption>
         </figure>
-      </a>
+      </Link>
     </article>
   );
 }

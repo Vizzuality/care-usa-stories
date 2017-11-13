@@ -2,12 +2,13 @@ import { createElement } from 'react';
 import { connect } from 'react-redux';
 import { redirect, NOT_FOUND } from 'redux-first-router';
 
-import { HOME, STORIES, STORIES_SLUG } from 'router';
+import { HOME, STORIES, STORY } from 'router';
 import Stories from './stories/stories';
+import Story from './story/story';
 
 const pages = {
   [STORIES]: Stories,
-  [STORIES_SLUG]: Stories,
+  [STORY]: Story,
   [NOT_FOUND]: Stories
 };
 

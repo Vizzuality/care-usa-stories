@@ -1,15 +1,18 @@
 import { connectRoutes, redirect } from 'redux-first-router';
 import createHistory from 'history/createBrowserHistory';
 import querySerializer from 'query-string';
+import restoreScroll from 'redux-first-router-restore-scroll'
 
-import { getCategories, getCountries } from 'components/filters/filters.duck';
+
+import { getCategoriesThunk, getCountriesThunk } from 'components/filters/filters.duck';
 import { getStoriesThunk } from 'pages/stories/stories.duck';
+import { getStoryThunk } from 'pages/story/story.duck';
 
 const history = createHistory();
 
 const HOME = 'location/HOME';
 const STORIES = 'location/STORIES';
-const STORIES_SLUG = 'location/STORIES_SLUG';
+const STORY = 'location/STORY';
 
 const dispatchPreFetchThunks = (...thunks) => async (...params) => thunks.forEach(thunk => thunk(...params));
 
@@ -20,10 +23,13 @@ const routes = {
   },
   [STORIES]: {
     path: '/stories',
-    thunk: dispatchPreFetchThunks(getStoriesThunk, getCategories, getCountries)
+    thunk: dispatchPreFetchThunks(getStoriesThunk, getCategoriesThunk, getCountriesThunk)
   },
-  [STORIES_SLUG]: '/stories/:slug'
+  [STORY]: {
+    path: '/stories/:slug',
+    thunk: dispatchPreFetchThunks(getStoryThunk)
+  },
 };
 
-export { HOME, STORIES, STORIES_SLUG };
-export default connectRoutes(history, routes, { querySerializer });
+export { HOME, STORIES, STORY };
+export default connectRoutes(history, routes, { querySerializer, restoreScroll: restoreScroll() });

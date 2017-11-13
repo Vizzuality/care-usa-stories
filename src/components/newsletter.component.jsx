@@ -1,6 +1,6 @@
 import React from "react";
 
-class ContactForm extends React.Component {
+class Newsletter extends React.Component {
   render() {
     return (
       <form
@@ -29,4 +29,4 @@ class ContactForm extends React.Component {
   }
 }
 
-export default ContactForm;
+export default Newsletter;

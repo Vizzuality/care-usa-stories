@@ -40,7 +40,7 @@ export function updateFilters(filters) {
 }
 
 // Navigation pre-fetching thunks
-export async function getCategories(dispatch, getState) {
+export async function getCategoriesThunk(dispatch, getState) {
   const { categories } = getState().filters;
   if (!categories.result.length) {
     const { items } = await contentful.getEntries({ content_type: 'sectors', order: 'fields.name'});
@@ -51,7 +51,7 @@ export async function getCategories(dispatch, getState) {
   }
 }
 
-export async function getCountries(dispatch, getState) {
+export async function getCountriesThunk(dispatch, getState) {
   const { countries } = getState().filters;
   if (!countries.result.length) {
     const { items } = await contentful.getEntries({

@@ -4,7 +4,7 @@ import storiesDuck from './stories.duck';
 
 
 function mapStateToProps({ stories }) {
-  return { stories: stories.entities };
+  return { entities: stories.entities };
 }
 export { storiesDuck }
 export default connect(mapStateToProps)(StoriesComponent);
