@@ -1,6 +1,8 @@
 import { connectRoutes, redirect } from 'redux-first-router';
 import createHistory from 'history/createBrowserHistory';
 import querySerializer from 'query-string';
+import restoreScroll from 'redux-first-router-restore-scroll'
+
 
 import { getCategoriesThunk, getCountriesThunk } from 'components/filters/filters.duck';
 import { getStoriesThunk } from 'pages/stories/stories.duck';
@@ -30,4 +32,4 @@ const routes = {
 };
 
 export { HOME, STORIES, STORY };
-export default connectRoutes(history, routes, { querySerializer });
+export default connectRoutes(history, routes, { querySerializer, restoreScroll: restoreScroll() });
