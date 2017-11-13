@@ -10,13 +10,15 @@ class StoriesGridContainer extends React.Component {
 
   getImage(pictures) {
     if (!pictures) return;
-    const images = this.props.stories ? this.props.stories.picture : {};
-    const files = this.props.stories ? this.props.stories.file : {};
-    const file = images[pictures[0]].file;
-    return files[file].file;
+    const { stories = {} } = this.props;
+    const [image] = pictures;
+    const images = stories.picture || {};
+    const files = stories.file || {};
+    const file = images[image] && images[image].file;
+    return files[file] && files[file].file;
   };
 
-  getLink({ title }, id) {
+  getLink(story, id) {
     return { type: STORY, payload: { slug: id } };
   }
 
