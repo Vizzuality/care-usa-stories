@@ -1,8 +1,7 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
+import { STORY } from 'router';
 import StoriesGrid from './stories-grid.component';
-import { STORIES_SLUG } from 'router';
-
 class StoriesGridContainer extends React.Component {
 
   static propTypes = {
@@ -17,18 +16,21 @@ class StoriesGridContainer extends React.Component {
     return files[file].file;
   };
 
-  getLink(story) {
-    return { type: STORIES_SLUG, payload: { slug: 'story1' } };
+  getLink({ title }, id) {
+    return { type: STORY, payload: { slug: id } };
   }
 
   render() {
     const stories = this.props.stories ? this.props.stories.story : {};
-    const cards = (stories ? Object.values(stories) : [])
-      .map(story => ({
-        ...story,
-        image: this.getImage(story.pictures),
-        link: this.getLink(story)
-      }));
+    const cards = (stories ? Object.keys(stories) : [])
+      .map(id => {
+        const story = stories[id];
+        return {
+          ...story,
+          image: this.getImage(story.pictures),
+          link: this.getLink(story, id)
+        };
+      });
 
     return createElement(StoriesGrid, { ...this.props, cards });
   }

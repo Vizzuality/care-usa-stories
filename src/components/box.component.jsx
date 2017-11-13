@@ -9,7 +9,7 @@ class Box extends React.Component {
           <section className="story-data">
             <div className="author-area">
               <p className="author-avatar">
-                <a href>
+                <a>
                   <img
                     className="rounded-img"
                     src="../src/images/author.png"
@@ -38,7 +38,7 @@ class Box extends React.Component {
             </div>
           </section>
         </div>
-        <a href className="map-link" title="SHOW THIS ON THE MAP">
+        <a className="map-link" title="SHOW THIS ON THE MAP">
           <i className="icon-world-map" />
           <span>SHOW THIS ON THE MAP</span>
         </a>

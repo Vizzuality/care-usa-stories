@@ -9,7 +9,7 @@ const history = createHistory();
 
 const HOME = 'location/HOME';
 const STORIES = 'location/STORIES';
-const STORIES_SLUG = 'location/STORIES_SLUG';
+const STORY = 'location/STORY';
 
 const dispatchPreFetchThunks = (...thunks) => async (...params) => thunks.forEach(thunk => thunk(...params));
 
@@ -22,8 +22,8 @@ const routes = {
     path: '/stories',
     thunk: dispatchPreFetchThunks(getStoriesThunk, getCategories, getCountries)
   },
-  [STORIES_SLUG]: '/stories/:slug'
+  [STORY]: '/stories/:slug'
 };
 
-export { HOME, STORIES, STORIES_SLUG };
+export { HOME, STORIES, STORY };
 export default connectRoutes(history, routes, { querySerializer });
