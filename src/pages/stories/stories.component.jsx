@@ -9,7 +9,7 @@ import Newsletter from "components/newsletter.component";
 class Stories extends React.Component {
 
   static propTypes = {
-    stories: PropTypes.object
+    entities: PropTypes.object
   };
 
   render() {
@@ -17,7 +17,7 @@ class Stories extends React.Component {
       <main id="pageContent" className="page-wrapper home">
         <Banner />
         <Filters />
-        <StoriesGrid stories={this.props.stories} />
+        <StoriesGrid entities={this.props.entities} />
         <RecentStories />
         <Newsletter />
       </main>

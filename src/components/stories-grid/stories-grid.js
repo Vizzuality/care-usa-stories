@@ -2,20 +2,12 @@ import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import { STORY } from 'router';
 import StoriesGrid from './stories-grid.component';
+import { getImage } from 'utils/stories';
+
 class StoriesGridContainer extends React.Component {
 
   static propTypes = {
-    stories: PropTypes.object
-  };
-
-  getImage(pictures) {
-    if (!pictures) return;
-    const { stories = {} } = this.props;
-    const [image] = pictures;
-    const images = stories.picture || {};
-    const files = stories.file || {};
-    const file = images[image] && images[image].file;
-    return files[file] && files[file].file;
+    entities: PropTypes.object
   };
 
   getLink(story, id) {
@@ -23,13 +15,13 @@ class StoriesGridContainer extends React.Component {
   }
 
   render() {
-    const stories = this.props.stories ? this.props.stories.story : {};
+    const stories = this.props.entities ? this.props.entities.story : {};
     const cards = (stories ? Object.keys(stories) : [])
       .map(id => {
         const story = stories[id];
         return {
           ...story,
-          image: this.getImage(story.pictures),
+          image: getImage(story.pictures, this.props.entities),
           link: this.getLink(story, id)
         };
       });
