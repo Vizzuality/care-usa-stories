@@ -253,7 +253,7 @@ select:focus {
   outline: none; }
 
 button {
-  cursor: url("/images/helpers/pointer.png"), pointer; }
+  cursor: pointer; }
   button.button {
     min-width: 252px;
     padding: 0 10px;
@@ -308,7 +308,7 @@ body {
     line-height: 24px;
     text-transform: uppercase;
     text-decoration: none;
-    cursor: url("/images/helpers/pointer.png"), pointer; }
+    cursor: pointer; }
     body a.active {
       color: #2c2c2c; }
     body a.button {
@@ -1983,7 +1983,7 @@ form.newsletter-form {
       line-height: 50px;
       text-align: center;
       background-color: #f56608;
-      cursor: url("/images/helpers/pointer.png"), pointer; }
+      cursor: pointer; }
     .video-container .video-box video {
       height: 270px; }
       @media only screen and (max-width: 990px) {
