@@ -1,7 +1,7 @@
 import React from "react";
 import DetailBanner from "components/detail-banner.component";
 import RecentStories from "components/recent-stories.component";
-import Newsletter from "components/newsletter";
+import Newsletter from "components/newsletter.component";
 
 class DetailOne extends React.Component {
   render() {

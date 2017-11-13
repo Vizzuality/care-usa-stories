@@ -4,10 +4,11 @@ import { redirect, NOT_FOUND } from 'redux-first-router';
 
 import { HOME, STORIES, STORIES_SLUG } from 'router';
 import Stories from './stories/stories';
+import Story from './story/story';
 
 const pages = {
   [STORIES]: Stories,
-  [STORIES_SLUG]: Stories,
+  [STORIES_SLUG]: Story,
   [NOT_FOUND]: Stories
 };
 
@@ -17,7 +18,6 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = ({ location }) => ({ page: location.type });
 
 const Pages = ({ page, onNotFound }) => {
-  alert(page)
   if (page === NOT_FOUND) onNotFound();
   return createElement(pages[page]);
 };
