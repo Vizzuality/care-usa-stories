@@ -2,12 +2,13 @@ import React from 'react';
 import cx from 'classnames';
 
 const getHeight = (w,h) => {
-  let height = 270;
   const delta = w && h ? (Math.round((w/h) * 10) / 10) : null;
-  if (delta === null) height = 172;
-  if (delta && delta <= 1) height = 350;
-  if (delta && delta >= 1.5) height = 200;
-  return height;
+  if (delta) {
+    if (delta <= 1) return 350;
+    if (delta >= 1.5) return 200;
+    return 270;
+  }
+  return 172;
 };
 
 const StoryCard =  ({ link, image, sectorList, location, title, summary }) => {

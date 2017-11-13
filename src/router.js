@@ -11,7 +11,7 @@ const HOME = 'location/HOME';
 const STORIES = 'location/STORIES';
 const STORIES_SLUG = 'location/STORIES_SLUG';
 
-const dispatchPreFetchThunks = (...thunks) => async (...connect) => thunks.forEach(thunk => thunk(...connect));
+const dispatchPreFetchThunks = (...thunks) => async (...params) => thunks.forEach(thunk => thunk(...params));
 
 const routes = {
   [HOME]: {

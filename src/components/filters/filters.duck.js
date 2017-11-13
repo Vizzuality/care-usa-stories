@@ -40,20 +40,29 @@ export function updateFilters(filters) {
 }
 
 // Navigation pre-fetching thunks
-export async function getCategories(dispatch) {
-  const { items } = await contentful.getEntries({ content_type: 'sectors', order: 'fields.name'});
-  dispatch({
-    type: GET_CATEGORIES,
-    payload: normalize(items, categoriesSchema)
-  })
+export async function getCategories(dispatch, getState) {
+  const { categories } = getState().filters;
+  if (!categories.result.length) {
+    const { items } = await contentful.getEntries({ content_type: 'sectors', order: 'fields.name'});
+    dispatch({
+      type: GET_CATEGORIES,
+      payload: normalize(items, categoriesSchema)
+    })
+  }
 }
 
-export async function getCountries(dispatch) {
-  const { items } = await contentful.getEntries({ content_type: 'country', order: 'fields.name' });
-  dispatch({
-    type: GET_COUNTRIES,
-    payload: normalize(items, coutriesSchema)
-  })
+export async function getCountries(dispatch, getState) {
+  const { countries } = getState().filters;
+  if (!countries.result.length) {
+    const { items } = await contentful.getEntries({
+      content_type: 'country',
+      order: 'fields.name'
+    });
+    dispatch({
+      type: GET_COUNTRIES,
+      payload: normalize(items, coutriesSchema)
+    })
+  }
 }
 
 export default createReducer(initialState, filtersReducer);

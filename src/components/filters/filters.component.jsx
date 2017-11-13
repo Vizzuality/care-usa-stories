@@ -34,7 +34,6 @@ class Filters extends React.Component {
   }
 
   onFilterChange(e) {
-    console.log(e)
     const { query } = this.props;
     const { value, name } = e.target;
     this.updateFilters({ ...query, [name]: value });
