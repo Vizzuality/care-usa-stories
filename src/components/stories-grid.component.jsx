@@ -20,12 +20,19 @@ class StoriesGrid extends React.Component {
         <span className="group">({cards.length} Stories)</span>
         <div className="grid">
           <Masonry
+            loadMore={() => (null)}
             pack={true}
             className="article-list"
           >
             {
               [...cards.map((storycard, key) => (
-                <StoryCard key={`${key}-story-card`} {...storycard} image={this.getImage(storycard.pictures)} />)),
+                <StoryCard
+                  key={`${key}-story-card`}
+                  {...storycard}
+                  image={this.getImage(storycard.pictures)}
+                  sectorList={storycard.sectorList}
+                />
+              )),
               (<form
                 key="quickDonate"
                 id="quickDonate"
@@ -52,7 +59,7 @@ class StoriesGrid extends React.Component {
               </form>)]
             }
           </Masonry>
-          {false && <a className="more" href="#">
+          {false && <a className="more">
             SHOW MORE STORIES
           </a>
           }

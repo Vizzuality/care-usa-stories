@@ -6,3 +6,4 @@ export function createReducer(initialState, reducers) {
 }
 
 export { storiesDuck as stories } from 'pages/stories/stories';
+export { filtersDuck as filters } from 'components/filters/filters';
