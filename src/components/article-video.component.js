@@ -8,7 +8,6 @@ class articleVideo extends React.Component {
           <div className="video-box">
             <video
               loop
-              preload
               width={420}
               height={270}
               poster="/images/poster-mask.png"

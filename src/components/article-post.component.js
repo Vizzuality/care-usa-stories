@@ -4,7 +4,7 @@ class ArticlePost extends React.Component {
   render() {
     return (
       <div className="article-expanded-holder">
-        <a href className="map-link __in-article" title="SHOW THIS ON THE MAP">
+        <a className="map-link __in-article" title="SHOW THIS ON THE MAP">
           <i className="icon-world-map" />
           <span>SHOW THIS ON THE MAP</span>
         </a>

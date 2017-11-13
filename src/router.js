@@ -2,8 +2,9 @@ import { connectRoutes, redirect } from 'redux-first-router';
 import createHistory from 'history/createBrowserHistory';
 import querySerializer from 'query-string';
 
-import { getCategories, getCountries } from 'components/filters/filters.duck';
+import { getCategoriesThunk, getCountriesThunk } from 'components/filters/filters.duck';
 import { getStoriesThunk } from 'pages/stories/stories.duck';
+import { getStoryThunk } from 'pages/story/story.duck';
 
 const history = createHistory();
 
@@ -20,9 +21,12 @@ const routes = {
   },
   [STORIES]: {
     path: '/stories',
-    thunk: dispatchPreFetchThunks(getStoriesThunk, getCategories, getCountries)
+    thunk: dispatchPreFetchThunks(getStoriesThunk, getCategoriesThunk, getCountriesThunk)
   },
-  [STORY]: '/stories/:slug'
+  [STORY]: {
+    path: '/stories/:slug',
+    thunk: dispatchPreFetchThunks(getStoryThunk)
+  },
 };
 
 export { HOME, STORIES, STORY };
