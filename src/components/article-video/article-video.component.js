@@ -1,17 +1,24 @@
 import React from "react";
 
-function ArticleVideo ({ video }) {
-  console.log(video)
+function ArticleVideo ({ video, getVideoRef, onClickPlay, paused }) {
   return (
     <section className="video-container widget">
       <div className="video-box">
         <video
+          ref={getVideoRef}
           width={420}
           height={270}
         >
           <source src={`http://${video.url}`} />
         </video>
-        <span id="pause">►</span>
+        <button className="control" onClick={onClickPlay}>
+          {paused && <i className="icon-play" />}
+          {!paused &&
+            <svg version="1.1" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path d="M64 64h160v384h-160zM288 64h160v384h-160z" />
+            </svg>
+          }
+        </button>
       </div>
       <div className="video-content-area">
         <p>

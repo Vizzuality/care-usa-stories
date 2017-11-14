@@ -10,7 +10,7 @@
     @media only screen and (max-width: $breakpoint-tablet) {
       height: 190px;
     }
-    span#pause {
+    .control {
       position: absolute;
       bottom: 1px;
       color: #fff;
@@ -52,7 +52,7 @@
         line-height: 32px;
       }
     }
-    .video-box span#pause {
+    .video-box .control {
       bottom: 2px;
     }
   }

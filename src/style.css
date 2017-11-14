@@ -1983,7 +1983,7 @@ form.newsletter-form {
     @media only screen and (max-width: 990px) {
       .video-container .video-box {
         height: 190px; } }
-    .video-container .video-box span#pause {
+    .video-container .video-box .control {
       position: absolute;
       bottom: 1px;
       color: #fff;
@@ -2019,7 +2019,7 @@ form.newsletter-form {
         .video-container .video-content-area p {
           font-size: 14px;
           line-height: 32px; }
-      .video-container .video-box span#pause {
+      .video-container .video-box .control {
         bottom: 2px; } }
 
 @media only screen and (max-width: 767px) {
