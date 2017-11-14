@@ -1,0 +1,148 @@
+
+/* Header
+================================================= */
+
+.main-head-holder{
+  background: #fff;
+  .main-head {
+    .logo-wrap {
+      margin: 0 auto;
+      text-align: center;
+      padding: 27px 0 24px;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        margin: 0;
+        padding: 28px 0 10px 29px;
+        text-align: left;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      img {
+        vertical-align: middle;
+      }
+    }
+    .main-menu {
+      margin: 0 auto;
+      text-align: center;
+      padding-bottom: 20px;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        display: none;
+        padding-top: 115px;
+        padding-bottom: 150px;
+      }
+      .main-menu-list {
+        @media only screen and (max-width: $breakpoint-mobile) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .menu-list-item {
+          display: inline-block;
+          margin-left: 7px;
+          margin-right: 14px;
+          .menu-link {
+            display: block;
+            padding: 10px 15px;
+            &.button {
+              line-height: 20px;
+            }
+          }
+          @media only screen and (max-width: $breakpoint-mobile) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+            &:first-child {
+              margin-top: 0;
+            }
+            &:last-child {
+              margin-top: 30px;
+              margin-bottom: 0;
+            }
+            .menu-link {
+              padding: 7px 15px;
+              font-size: 14px;
+              &.button {
+                line-height: 35px;
+                min-width: 156px;
+                height: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.mob-menu {
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  cursor: pointer;
+  @media only screen and (max-width: $breakpoint-mobile) {
+    display: block;
+  }
+  >div {
+    width: 16px;
+    height:14px;
+    span {
+      display: block;
+      position: absolute;
+      background: rgba(111,111,111,1);
+      width: 100%;
+      height: 1px;
+      top: 5px;
+      right: 0;
+      opacity: 1;
+      &::before {
+        position: absolute;
+        background: rgba(111,111,111,1);
+        width: 16px;
+        height: 1px;
+        top: 5px;
+        content: "";
+        display: block;
+      }
+      &::after {
+        position: absolute;
+        background: rgba(111,111,111,1);
+        width: 16px;
+        height: 1px;
+        bottom: 5px;
+        content: "";
+        display: block;
+      }
+    }
+  }
+  &.active {
+    & + .main-menu {
+      display: block;
+    }
+    .close {
+      display: block;
+      span {
+        position: absolute;
+        background: rgba(111,111,111,.0);
+        &::after{
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          bottom: 0;
+        }
+        &::before{
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          top: 0;
+        }
+      }
+    }
+
+    .open {
+      display: none;
+    }
+  }
+  .close {
+    display: none;
+  }
+}

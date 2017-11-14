@@ -1,0 +1,56 @@
+/* Switchers
+================================================= */
+.switchers-area {
+  z-index: 1000;
+  position: absolute;
+  a,
+  button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 55px;
+    font-size: 22px;
+    text-align: center;
+    background: transparent;
+    border: 1px solid #fff;
+    @extend %transition;
+    &:hover{
+      background: $brand-primary-color;
+      border-color: $brand-primary-color;
+    }
+    &:last-child {
+      @media only screen and (min-width: $breakpoint-mobile + 1px) {
+        margin-top: 5px;
+      }
+    }
+  }
+  .switcher-grid {
+    @media only screen and (min-width: $breakpoint-mobile + 1px) {
+      margin-bottom: 10px;
+    }
+    a {
+      font-size: 16px;
+      margin-top: 0;
+      line-height: 52px;
+      background: $brand-primary-color;
+      border-color: $brand-primary-color;
+      &:hover {
+        background: transparent;
+        border-color: #fff;
+      }
+    }
+  }
+  @media only screen and (max-width: $breakpoint-mobile){
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    left: 4%;
+    display: flex;
+    justify-content: space-between;
+    .switcher-arrow {
+      a:first-child {
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

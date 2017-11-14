@@ -1,0 +1,14 @@
+%transition {
+  transition: all .3s ease-in;
+}
+
+%clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
