@@ -25,10 +25,10 @@ class StoriesGridContainer extends React.Component {
     const cards = (stories ? Object.keys(stories) : [])
       .map(id => {
         const story = stories[id];
-        const images = getPictures(story.pictures, this.props.entities);
+        const pictures = getPictures(story.pictures, this.props.entities);
         return {
           ...story,
-          image: images && images[0],
+          image: pictures && pictures[0],
           link: this.getLink(story, id)
         };
       })

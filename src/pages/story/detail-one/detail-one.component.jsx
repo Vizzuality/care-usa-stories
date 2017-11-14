@@ -7,7 +7,7 @@ function DetailOne ({ story }) {
 
   return (
     <main id="pageContent" className="page-wrapper">
-      <DetailBanner story={story} />
+      <DetailBanner showSummary story={story} />
       <RecentStories />
       <Newsletter />
     </main>

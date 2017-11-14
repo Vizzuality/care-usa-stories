@@ -29,7 +29,15 @@
       max-height: 840px;
       min-width: 525px;
       margin-top: 12px;
-      background-image: linear-gradient(180deg, #4b565d 0%, #0d212e 100%);
+
+      .quote-picture {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: cover;
+        z-index: 1;
+      }
       figcaption {
         position: absolute;
         left: 0;
@@ -72,10 +80,6 @@
           margin-top: 35px;
           margin-left: auto;
           margin-right: auto;
-          img {
-            max-height: 428px;
-            width: 100%;
-          }
           figcaption {
             padding-left: 34px;
             padding-top: 90px;
@@ -107,6 +111,16 @@
             font-size: 14px;
             line-height: 32px;
           }
+        }
+      }
+    }
+    .std {
+      &.noMedia {
+        max-width: 50%;
+        margin: 0 66px;
+        @media only screen and (max-width: $breakpoint-mobile) {
+          max-width: 90%;
+          margin: 0;
         }
       }
     }
