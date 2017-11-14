@@ -3,7 +3,7 @@ import Box from "./box.component";
 import DetailSwitch from "./detail-switch.component";
 
 function DetailBanner (props) {
-  const { url, filename } = props;
+  const { image: { url, filename }, story } = props;
   return (
     <section className="banner-story-container collapse">
       <div className="banner-holder">
@@ -19,7 +19,7 @@ function DetailBanner (props) {
               alt={filename}
             />
           </picture>
-          <Box/>
+          <Box {...story} />
         </div>
       </div>
       <DetailSwitch/>
