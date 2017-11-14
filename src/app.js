@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Pages from 'pages';
-import Header from 'components/header.component';
+import Header from 'components/header/header';
 import Footer from 'components/footer.component';
 import './style.css';
 

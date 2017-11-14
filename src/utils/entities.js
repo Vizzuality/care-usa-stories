@@ -1,11 +1,12 @@
-
 export function getPictures(pictures, stories = {}) {
   if (!pictures) return;
-  return pictures.map(picture => {
+  return pictures.map(id => {
     const pictureEntity = stories.picture || {};
+    const picture = pictureEntity[id];
     const fileEntity = stories.file || {};
-    const file = pictureEntity[picture] && pictureEntity[picture].file;
-    return fileEntity[file] && fileEntity[file].file;
+    const file = picture && fileEntity[picture.file];
+    if (file) return { ...picture, ...file };
+    return null;
   }).filter(p => !!p);
 }
 
@@ -19,14 +20,14 @@ export function getAuthors(authors, stories = {}) {
       const photo = photoEntity[author.photo];
       return { ...author, photo };
     }
-    return author;
+    return null;
   }).filter(a => !!a);
 }
 
-export function getCountries(countries, stories = {}) {
-  if (!countries) return;
-  return countries.map(id => {
-    const countryEntity = stories.country || {};
-    return countryEntity[id];
+export function getEntity(list, stories = {}, entity) {
+  if (!list) return;
+  return list.map(id => {
+    const listEntity = stories[entity] || {};
+    return listEntity[id];
   }).filter(a => !!a);
 }

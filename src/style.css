@@ -663,8 +663,14 @@ input[type="search"]::-webkit-search-results-decoration {
     position: relative;
     max-height: 840px;
     min-width: 525px;
-    margin-top: 12px;
-    background-image: linear-gradient(180deg, #4b565d 0%, #0d212e 100%); }
+    margin-top: 12px; }
+    .article-expanded-container .article-expanded-holder .quote-area .quote-picture {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: cover;
+      z-index: 1; }
     .article-expanded-container .article-expanded-holder .quote-area figcaption {
       position: absolute;
       left: 0;
@@ -701,9 +707,6 @@ input[type="search"]::-webkit-search-results-decoration {
         margin-top: 35px;
         margin-left: auto;
         margin-right: auto; }
-        .article-expanded-container .article-expanded-holder.quote-content .quote-area img {
-          max-height: 428px;
-          width: 100%; }
         .article-expanded-container .article-expanded-holder.quote-content .quote-area figcaption {
           padding-left: 34px;
           padding-top: 90px;
@@ -727,6 +730,13 @@ input[type="search"]::-webkit-search-results-decoration {
           .article-expanded-container .article-expanded-holder.quote-content .std p {
             font-size: 14px;
             line-height: 32px; } }
+  .article-expanded-container .article-expanded-holder .std.noMedia {
+    max-width: 50%;
+    margin: 0 66px; }
+    @media only screen and (max-width: 767px) {
+      .article-expanded-container .article-expanded-holder .std.noMedia {
+        max-width: 90%;
+        margin: 0; } }
 
 .article-expanded-container.gallery-widget-content {
   display: flex;
@@ -1973,7 +1983,7 @@ form.newsletter-form {
     @media only screen and (max-width: 990px) {
       .video-container .video-box {
         height: 190px; } }
-    .video-container .video-box span#pause {
+    .video-container .video-box .control {
       position: absolute;
       bottom: 1px;
       color: #fff;
@@ -2009,7 +2019,7 @@ form.newsletter-form {
         .video-container .video-content-area p {
           font-size: 14px;
           line-height: 32px; }
-      .video-container .video-box span#pause {
+      .video-container .video-box .control {
         bottom: 2px; } }
 
 @media only screen and (max-width: 767px) {

@@ -1,8 +1,8 @@
 import React from "react";
 import Box from "./box.component";
-import DetailSwitch from "components/DetailSwitch/detail-switch";
+import DetailSwitch from "components/detail-switch/detail-switch";
 
-function DetailBanner ({ story }) {
+function DetailBanner ({ story, showSummary }) {
 
   const { pictures: [{ url, filename }] } = story;
 
@@ -21,7 +21,7 @@ function DetailBanner ({ story }) {
               alt={filename}
             />
           </picture>
-          <Box {...story} />
+          <Box showSummary={showSummary} {...story} />
         </div>
       </div>
       <DetailSwitch/>
