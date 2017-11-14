@@ -21,9 +21,6 @@ function Filters(props) {
         type="checkbox"
         name="filterTrigger"
       />
-      <label className="label-trigger" htmlFor="filterTrigger">
-        FILTER BY<span className="icon-chevron-down"/>
-      </label>
       <div
         className="multisearch-form box"
       >
