@@ -11,7 +11,7 @@ function DetailTwo ({ story }) {
   const [, quotePicture] = pictures;
   const [video] = videos;
   const hasQuote = quotePicture || quote;
-  console.log(story)
+
   return (
     <main id="pageContent" className="page-wrapper">
       <DetailBanner story={story}/>

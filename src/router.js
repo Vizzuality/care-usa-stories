@@ -11,6 +11,7 @@ import { getStoryThunk } from 'pages/story/story.duck';
 // pages
 import Stories from 'pages/stories/stories'
 import Story from 'pages/story/story'
+import Placeholder from 'pages/placeholder.component'
 
 const history = createHistory();
 
@@ -19,6 +20,8 @@ export const HOME = 'location/HOME';
 export const STORIES = 'location/STORIES';
 export const STORY = 'location/STORY';
 export const MAP = 'location/MAP';
+export const ABOUT = 'location/ABOUT';
+export const DONATE = 'location/DONATE';
 
 const dispatchPreFetchThunks = (...thunks) => async (...params) => thunks.forEach(thunk => thunk(...params));
 
@@ -40,6 +43,14 @@ export const routes = {
   [MAP]: {
     path: '/map',
     thunk: async () => window.location.replace('http://worldofimpact.care.org')
+  },
+  [ABOUT]: {
+    path: '/about',
+    component: Placeholder
+  },
+  [DONATE]: {
+    path: '/donate',
+    component: Placeholder
   },
   [NOT_FOUND]: {
     path: '/404',
