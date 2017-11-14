@@ -1,39 +1,46 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Link from 'redux-first-router-link';
+import moment from 'moment';
 import { MAP } from 'router';
 
 function Box (props) {
-  const { title, author, sectorList, summary } = props;
+  const { title, sectorList, summary, authors, story_date } = props;
   const mapLink = { type: MAP };
-
+  const date = story_date && moment(story_date).format('Do MMM YYYY');
+  const avatar = author => (author.photo && author.photo.file.url);
+  console.log(props);
   return (
     <div className="banner-box">
       <div className="banner-content">
         <h1>{title}</h1>
         <section className="story-data">
           <div className="author-area">
-            {author &&
-              [
+            {authors.map(author => [
                 <p key="avatar" className="author-avatar">
                   <a>
-                    <img
-                      className="rounded-img"
-                      src="../src/images/author.png"
-                      alt="By Anguparu Monica"
-                    />
+                    {avatar(author) &&
+                      <img
+                        className="rounded-img"
+                        src={`http:${avatar(author)}`}
+                        alt={`By ${author.name}`}
+                      />
+                    }
                   </a>
                 </p>,
                 <p key="authorName" className="author-data">
-                  <span className="author">By Anguparu Monica</span>
+                  <span className="author">By {author.name}</span>
                   <span className="country">CARE Uganda</span>
                 </p>
-              ]
+            ])
             }
             <p className="datetime-area">
               <span>{sectorList.join(', ')}</span>
-              <span className="datetime">
-                  <time dateTime="2017-03-22">22 March 2017</time>
+              {date &&
+                <span className="datetime">
+                  <time dateTime={date}>{date}</time>
                 </span>
+              }
             </p>
           </div>
           <div className="story-preview">
@@ -54,5 +61,16 @@ function Box (props) {
     </div>
   );
 }
+Box.propTypes = {
+  title: PropTypes.string,
+  sectorList: PropTypes.array,
+  summary: PropTypes.string,
+  authors: PropTypes.array,
+  story_date: PropTypes.string
+};
+
+Box.defaultProps = {
+  authors: []
+};
 
 export default Box;

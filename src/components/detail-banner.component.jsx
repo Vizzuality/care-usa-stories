@@ -2,8 +2,9 @@ import React from "react";
 import Box from "./box.component";
 import DetailSwitch from "./detail-switch.component";
 
-function DetailBanner (props) {
-  const { image: { url, filename }, story } = props;
+function DetailBanner ({ story }) {
+
+  const { pictures: [{ url, filename }] } = story;
 
   return (
     <section className="banner-story-container collapse">

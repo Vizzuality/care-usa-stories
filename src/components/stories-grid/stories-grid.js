@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { STORY } from 'router';
-import { getImage } from 'utils/stories';
+import { getPictures } from 'utils/stories';
 import storiesGridDuck, { setCardOffset }  from './stories-grid.duck';
 import StoriesGrid from './stories-grid.component';
 
@@ -25,9 +25,10 @@ class StoriesGridContainer extends React.Component {
     const cards = (stories ? Object.keys(stories) : [])
       .map(id => {
         const story = stories[id];
+        const images = getPictures(story.pictures, this.props.entities);
         return {
           ...story,
-          image: getImage(story.pictures, this.props.entities),
+          image: images && images[0],
           link: this.getLink(story, id)
         };
       })
