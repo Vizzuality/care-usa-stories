@@ -1,14 +1,9 @@
 import React from "react";
 import { NavLink } from 'redux-first-router-link';
-import { MAP, STORIES, ABOUT, DONATE } from 'router';
+import cx from 'classnames';
 
 function Header (props) {
-  const links = {
-    map: { type: MAP },
-    stories: { type: STORIES },
-    about: { type: ABOUT },
-    donate: { type: DONATE }
-  };
+  const { links, openMobileMenu, closeMobileMenu, open } = props;
   return (
     <header id="home" className="main-head-holder">
       <div className="main-head  container">
@@ -22,13 +17,17 @@ function Header (props) {
             />
           </a>
         </div>
-        <section className="mob-menu">
-          <div className="open">
-            <span/>
-          </div>
-          <div className="close">
-            <span/>
-          </div>
+        <section className={cx(['mob-menu', { active: open }])}>
+          {!open &&
+            <div className="open" onClick={openMobileMenu}>
+              <span/>
+            </div>
+          }
+          {open &&
+            <div className="close" onClick={closeMobileMenu}>
+              <span/>
+            </div>
+          }
         </section>
         <nav className="main-menu">
           <ul className="main-menu-list">
