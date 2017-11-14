@@ -5,20 +5,18 @@ import ArticleQuote from "components/article-quote.component";
 import RecentStories from "components/recent-stories.component";
 import Newsletter from "components/newsletter.component";
 
-class detailTwo extends React.Component {
-  render() {
-    return (
-      <main id="pageContent" className="page-wrapper">
-        <DetailBanner />
-        <article className="article-expanded-container">
-          <ArticleVideo />
-          <ArticleQuote />
-        </article>
-        <RecentStories />
-        <Newsletter />
-      </main>
-    );
-  }
+function DetailTwo ({ story }) {
+  return (
+    <main id="pageContent" className="page-wrapper">
+      <DetailBanner story={story}/>
+      <article className="article-expanded-container">
+        <ArticleVideo/>
+        <ArticleQuote/>
+      </article>
+      <RecentStories/>
+      <Newsletter/>
+    </main>
+  );
 }
 
-export default detailTwo;
+export default DetailTwo;

@@ -2,6 +2,13 @@
 ================================================= */
 .banner-story-container {
   position: relative;
+  .switchers-area {
+    top: 35%;
+    right: 11%;
+    @media only screen and (min-width: $breakpoint-mobile + 1px) {
+      top: 41%;
+    }
+  }
   .banner-holder {
     .banner {
       picture {
@@ -399,13 +406,6 @@
             }
           }
         }
-      }
-    }
-    .switchers-area {
-      top: 35%;
-      right: 11%;
-      @media only screen and (min-width: $breakpoint-mobile + 1px) {
-        top: 41%;
       }
     }
   }
