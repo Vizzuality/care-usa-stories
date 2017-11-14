@@ -1,8 +1,11 @@
 import React from "react";
 import Link from 'redux-first-router-link';
+import { MAP } from 'router';
 
 function Box (props) {
-  const { title, author, sectorList, summary, mapLink } = props;
+  const { title, author, sectorList, summary } = props;
+  const mapLink = { type: MAP };
+
   return (
     <div className="banner-box">
       <div className="banner-content">
