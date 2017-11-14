@@ -34,6 +34,7 @@ function Filters(props) {
               type="search"
               name="q"
               placeholder="Search by..."
+              defaultValue={query.q}
               onInput={onFilterChange}
             />
             <button
