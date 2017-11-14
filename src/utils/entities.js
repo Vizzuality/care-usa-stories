@@ -14,8 +14,19 @@ export function getAuthors(authors, stories = {}) {
   return authors.map(id => {
     const authorEntity = stories.author || {};
     const author = authorEntity[id];
-    const photoEntity = stories.photo || {};
-    const photo = photoEntity[author.photo];
-    return { ...author, photo };
+    if (author) {
+      const photoEntity = stories.photo || {};
+      const photo = photoEntity[author.photo];
+      return { ...author, photo };
+    }
+    return author;
+  }).filter(a => !!a);
+}
+
+export function getCountries(countries, stories = {}) {
+  if (!countries) return;
+  return countries.map(id => {
+    const countryEntity = stories.country || {};
+    return countryEntity[id];
   }).filter(a => !!a);
 }

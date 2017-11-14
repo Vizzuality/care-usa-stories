@@ -5,10 +5,15 @@ import moment from 'moment';
 import { MAP } from 'router';
 
 function Box (props) {
-  const { title, sectorList, summary, authors, story_date } = props;
+  const { title, sectorList, summary, authors, story_date, countries } = props;
   const mapLink = { type: MAP };
   const date = story_date && moment(story_date).format('Do MMM YYYY');
   const avatar = author => (author.photo && author.photo.file.url);
+  const countriesMarkup = countries.map(country => (
+    <span key={country.iso} className="country">
+      {country.name}
+    </span>
+  ));
   console.log(props);
   return (
     <div className="banner-box">
@@ -30,9 +35,14 @@ function Box (props) {
                 </p>,
                 <p key="authorName" className="author-data">
                   <span className="author">By {author.name}</span>
-                  <span className="country">CARE Uganda</span>
+                  {countriesMarkup}
                 </p>
             ])
+            }
+            {!authors.length && countries.length &&
+              <p key="authorName" className="author-data">
+                {countriesMarkup}
+              </p>
             }
             <p className="datetime-area">
               <span>{sectorList.join(', ')}</span>

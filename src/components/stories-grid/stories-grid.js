@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { STORY } from 'router';
-import { getPictures } from 'utils/stories';
+import { getPictures } from 'utils/entities';
 import storiesGridDuck, { setCardOffset }  from './stories-grid.duck';
 import StoriesGrid from './stories-grid.component';
 

@@ -11,7 +11,12 @@ const category = new schema.Entity('category', {}, contentful2Normalizr);
 const country = new schema.Entity('country', {}, contentful2Normalizr);
 const photo = new schema.Entity('photo', {}, contentful2Normalizr);
 const author = new schema.Entity('author', { photo }, contentful2Normalizr);
-const story = new schema.Entity('story', { pictures: [picture], authors: [author] }, {
+const story = new schema.Entity('story',
+  {
+    pictures: [picture],
+    authors: [author],
+    countries: [country]
+  }, {
   ...contentful2Normalizr,
   idAttribute: v => kebabCase(v.fields.title)
 });
