@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "./box.component";
-import DetailSwitch from "./detail-switch.component";
+import DetailSwitch from "components/DetailSwitch/detail-switch";
 
 function DetailBanner ({ story }) {
 
