@@ -13,8 +13,8 @@ function ArticleSidebar ({ picture, quote }) {
           {picture &&
             <div className="gallery-widget-image">
               <img
-                src="/images/otim.png"
-                alt="My name is Otim Peter and I am 34 years of age and married. Lillian, and I have six children, ranging in age from 6 months."
+                src={`http:${picture.url}`}
+                alt={picture.title}
               />
             </div>
           }
