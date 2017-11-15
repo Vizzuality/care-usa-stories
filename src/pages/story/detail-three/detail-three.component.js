@@ -5,20 +5,20 @@ import ArticlePost from "components/article-post.component";
 import RecentStories from "components/recent-stories.component";
 import Newsletter from "components/newsletter.component";
 
-class DetailThree extends React.Component {
-  render() {
-    return (
-      <main id="pageContent" className="page-wrapper">
-        <DetailHeader />
-        <article className="article-expanded-container gallery-widget-content">
-          <ArticleSidebar />
-          <ArticlePost />
-        </article>
-        <RecentStories />
-        <Newsletter />
-      </main>
-    );
-  }
+function DetailThree ({ story }) {
+  const { quote, body, pictures = [] } = story;
+  const [, sidebarPicture] = pictures;
+  return (
+    <main id="pageContent" className="page-wrapper">
+      <DetailHeader story={story} />
+      <article className="article-expanded-container gallery-widget-content">
+        <ArticleSidebar quote={quote} picture={sidebarPicture} />
+        <ArticlePost body={body} />
+      </article>
+      <RecentStories/>
+      <Newsletter/>
+    </main>
+  );
 }
 
 export default DetailThree;

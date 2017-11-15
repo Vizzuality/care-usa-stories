@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Link from 'redux-first-router-link';
 import moment from 'moment';
-import { MAP } from 'router';
 
 function Box (props) {
   const { title, sectorList, summary, authors, story_date, countries, showSummary } = props;
-  const mapLink = { type: MAP };
   const date = story_date && moment(story_date).format('Do MMM YYYY');
   const avatar = author => (author.photo && author.photo.url);
   const countriesMarkup = countries.map(country => (
@@ -16,7 +13,6 @@ function Box (props) {
   ));
 
   return (
-    <div className="banner-box">
       <div className="banner-content">
         <h1>{title}</h1>
         <section className="story-data">
@@ -62,15 +58,6 @@ function Box (props) {
           }
         </section>
       </div>
-      <Link
-        to={mapLink}
-        className="map-link"
-        title="SHOW THIS ON THE MAP"
-      >
-        <i className="icon-world-map"/>
-        <span>SHOW THIS ON THE MAP</span>
-      </Link>
-    </div>
   );
 }
 Box.propTypes = {
