@@ -142,7 +142,7 @@
             </section>
             <!--end banner-->
             <!--Multi-search form-->
-            <section class="multi-search-container">
+            <div class="multi-search-container">
                 <input
                         id="filterTrigger"
                         class="hidden"
@@ -448,19 +448,19 @@
                             <select id="mostRecentFilter" title="Most recent">
                                 <option value="" disabled selected>Most Recent</option>
                                 <option value="">Story 1</option>
-                                <option value="">Story 2</option>"
+                                <option value="">Story 2</option>
                                 <option value="">Story3</option>
                             </select>
                         </div>
                     </div>
                 </form>
-            </section>
+            </div>
             <!--end multi-search form-->
             <!--total stories/masonry grid-->
             <section class="article-container">
                 <h3>Total Stories</h3>
-                <span class="group">(20 Stories)</span>
                 <div class="grid">
+                    <span class="group">(20 Stories)</span>
                     <div class="article-list">
                         <article class="article-item box">
                             <a class="holder" href="#">
@@ -468,7 +468,7 @@
                                     <div class="article-layer">
                                         <img src="./src/images/article/img1.png"
                                              alt="Rehena and Her Solar Lamp.">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -489,7 +489,7 @@
                                     <div class="article-layer">
                                         <img src="./src/images/article/img2.png"
                                              alt="Reaping the benefits of training.">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -511,7 +511,7 @@
                                     <div class="article-layer">
                                         <img src="./src/images/article/img3.png"
                                              alt="Rebuilding Respect One Tree a Time.">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -532,7 +532,7 @@
                                     <div class="article-layer">
                                         <img src="./src/images/article/img5.png"
                                              alt="The Promise to shield the birth right">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -554,7 +554,7 @@
                                     <div class="article-layer">
                                         <img src="./src/images/article/img6.png"
                                              alt="Yes, School Reintegration is possible when you get money.">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -576,7 +576,7 @@
                                     <div class="article-layer">
                                         <img src="./src/images/article/img4.png"
                                              alt="Haiyan Survivor Takes Lead in Community Transformation">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -595,7 +595,7 @@
                             <a class="holder" href="#">
                                 <figure class="article-content">
                                     <div class="article-layer no-image">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -615,7 +615,7 @@
                             <a class="holder" href="#">
                                 <figure class="article-content">
                                     <div class="article-layer no-image">
-                                        <p><button class="btn" type="button">GO TO STORY</button></p>
+                                        <p><span class="btn" >GO TO STORY</span></p>
                                     </div>
                                     <figcaption>
                                         <div class="article-data">
@@ -759,11 +759,21 @@
                 </div>
             </section>
             <!--end recent stories/slick slides-->
+
             <!--Quick Donate form-->
             <form id="mainNewsletter" class="newsletter-form" action="#" method="post">
                 <h4>The lastest from Care</h4>
-                <input id="newsletterEmail" name="newsletterInput" value="" placeholder="Enter email address">
-                <button id="newsletterSubmit" class="button" type="button" name="newsletterBtn" title="JOIN">JOIN</button>
+                <input
+                        id="newsletterEmail"
+                        name="newsletterInput"
+                        value=""
+                        placeholder="Enter email address">
+                <button
+                        id="newsletterSubmit"
+                        class="button"
+                        type="button"
+                        name="newsletterBtn"
+                        title="JOIN">JOIN</button>
             </form>
             <!--end Quick Donate form-->
         </main>
