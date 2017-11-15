@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Banner from "components/story-slider/story-slider";
 import Filters from "components/filters/filters";
 import StoriesGrid from "components/stories-grid/stories-grid";
-import RecentStories from "components/recent-stories.component";
+import RecentStories from "components/recent-stories/recent-stories";
 import Newsletter from "components/newsletter.component";
 
 class Stories extends React.Component {

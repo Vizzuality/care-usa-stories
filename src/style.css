@@ -1914,11 +1914,15 @@ form.newsletter-form {
         margin-right: -100px; }
       .recent-stories-container .recent-slides-holder .slide-item:before {
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%); } }
-  .recent-stories-container .recent-slides-holder .slide-item img {
-    min-height: 210px; }
+  .recent-stories-container .recent-slides-holder .slide-item .recent-slide-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 210px;
+    width: inherit; }
     @media only screen and (max-width: 767px) {
-      .recent-stories-container .recent-slides-holder .slide-item img {
-        max-height: 220px;
+      .recent-stories-container .recent-slides-holder .slide-item .recent-slide-img {
+        height: 220px;
         max-width: inherit; } }
   @media only screen and (max-width: 425px) {
     .recent-stories-container .recent-slides-holder .slide-item.slick-active {

@@ -1,6 +1,6 @@
 import React from "react";
 import DetailBanner from "components/detail-banner.component";
-import RecentStories from "components/recent-stories.component";
+import RecentStories from "components/recent-stories/recent-stories.component";
 import Newsletter from "components/newsletter.component";
 
 function DetailOne ({ story }) {

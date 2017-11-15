@@ -58,11 +58,15 @@
           background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%);
         }
       }
-      img {
-        min-height: 210px;
+      .recent-slide-img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 210px;
+        width: inherit;
         //max-width: 206px;
         @media only screen and (max-width: $breakpoint-mobile) {
-          max-height: 220px;
+          height: 220px;
           max-width: inherit;
         }
       }
