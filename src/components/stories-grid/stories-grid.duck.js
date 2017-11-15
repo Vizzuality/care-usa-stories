@@ -3,6 +3,7 @@ import { createReducer } from 'store';
 const SET_CARD_LIMIT = 'stories/SET_CARD_LIMIT';
 
 const initialState = {
+  cardStart: 3,
   cardOffset: 20
 };
 

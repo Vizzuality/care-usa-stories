@@ -5,9 +5,7 @@ import DetailThree from './detail-three/detail-three.component';
 
 function Story(props) {
   const { template, story } = props;
-  const hasPictures = story.pictures && story.pictures.length > 0;
-
-  const Detail = (template && hasPictures) ? {
+  const Detail = (template) ? {
     photoStory: DetailOne,
     videoStory: DetailTwo
   }[template] : DetailThree;

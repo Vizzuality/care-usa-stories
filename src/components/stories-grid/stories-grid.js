@@ -12,6 +12,7 @@ class StoriesGridContainer extends React.Component {
 
   static propTypes = {
     entities: PropTypes.object,
+    cardStart: PropTypes.number,
     cardOffset: PropTypes.number,
     cardLimit: PropTypes.number
   };
@@ -32,14 +33,14 @@ class StoriesGridContainer extends React.Component {
           link: this.getLink(story, id)
         };
       })
-      .slice(0, this.props.cardOffset);
+      .slice(this.props.cardStart, this.props.cardOffset);
 
     return createElement(StoriesGrid, { ...this.props, cards });
   }
 }
 
 function mapStateToProps({ storiesGrid }) {
-  return { cardOffset: storiesGrid.cardOffset };
+  return { ...storiesGrid };
 }
 
 function mapDispatchToProps(dispatch) {
