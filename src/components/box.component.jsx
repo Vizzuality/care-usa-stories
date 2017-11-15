@@ -19,7 +19,7 @@ function Box (props) {
           <div className="author-area">
             {authors.map(author => [
                 <p key="avatar" className="author-avatar">
-                  <a>
+                  <a className="author-avatar-image">
                     {avatar(author) &&
                       <img
                         className="rounded-img"

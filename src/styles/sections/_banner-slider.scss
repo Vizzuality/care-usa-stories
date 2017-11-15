@@ -71,14 +71,16 @@
   }
   .slide {
     position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(#fff, 0.7);
+    &.veil {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(#fff, 0.7);
+      }
     }
     .slide-banner {
       height: 660px;
@@ -110,6 +112,7 @@
         margin-left: -4px;
         margin-top: 20px;
         margin-bottom: 50px;
+        font-size: 45px;
         @media only screen and (min-width: 426px) and (max-width: $breakpoint-laptop) {
           margin-top: 10px;
           margin-bottom: 20px;
@@ -120,7 +123,7 @@
           margin-bottom: 10px;
         }
       }
-      div {
+      .clearfix {
         @extend %clearfix;
         .author-data {
           margin-top: 10px;

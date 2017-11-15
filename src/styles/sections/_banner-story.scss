@@ -38,7 +38,7 @@
           .author-area {
             display: flex;
             .author-avatar {
-              a {
+              .author-avatar-image {
                 img {
                   width: 48px;
                   height: 48px;
@@ -167,7 +167,7 @@
             .author-area {
               display: block;
               .author-avatar {
-                a {
+                author-avatar-image {
                   img {
                     margin-right: 14px;
                     border-width: 4px;
@@ -225,7 +225,7 @@
               line-height: 26px;
             }
             .author-avatar {
-              a {
+              author-avatar-image {
                 img {
                   width: 48px;
                   height: 48px;
@@ -351,7 +351,7 @@
               .author-avatar {
                 width: 30%;
                 float: left;
-                a.group {
+                author-avatar-image.group {
                   img {
                     width: 40px;
                     height: 40px;

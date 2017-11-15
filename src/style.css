@@ -9,11 +9,11 @@ button.button:active, button.button:hover, button.button:focus, body a.button:ac
 .multi-search-container .multisearch-form .filters-holder .field:first-child button:focus i, form.newsletter-form input:active, form.newsletter-form input:focus, form.newsletter-form .button:active, form.newsletter-form .button:hover, form.newsletter-form .button:focus {
   transition: all .3s ease-in; }
 
-.article-container .grid:before, .banner .slide .slide-content div:before, .article-container .grid:after, .banner .slide .slide-content div:after {
+.article-container .grid:before, .banner .slide .slide-content .clearfix:before, .article-container .grid:after, .banner .slide .slide-content .clearfix:after {
   content: " ";
   display: table; }
 
-.article-container .grid:after, .banner .slide .slide-content div:after {
+.article-container .grid:after, .banner .slide .slide-content .clearfix:after {
   clear: both; }
 
 @font-face {
@@ -938,7 +938,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .banner .slide {
   position: relative; }
-  .banner .slide::before {
+  .banner .slide.veil::before {
     content: '';
     position: absolute;
     top: 0;
@@ -973,7 +973,8 @@ input[type="search"]::-webkit-search-results-decoration {
     .banner .slide .slide-content h1 {
       margin-left: -4px;
       margin-top: 20px;
-      margin-bottom: 50px; }
+      margin-bottom: 50px;
+      font-size: 45px; }
       @media only screen and (min-width: 426px) and (max-width: 1024px) {
         .banner .slide .slide-content h1 {
           margin-top: 10px;
@@ -983,7 +984,7 @@ input[type="search"]::-webkit-search-results-decoration {
       @media only screen and (max-width: 750px) {
         .banner .slide .slide-content h1 {
           margin-bottom: 10px; } }
-    .banner .slide .slide-content div .author-data {
+    .banner .slide .slide-content .clearfix .author-data {
       margin-top: 10px; }
 
 /* Banner story
@@ -1016,18 +1017,18 @@ input[type="search"]::-webkit-search-results-decoration {
         margin-top: 60px; }
         .banner-story-container.collapse .banner-box .banner-content .story-data .author-area {
           display: flex; }
-          .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar a img {
+          .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar .author-avatar-image img {
             width: 48px;
             height: 48px;
             border-radius: 50%;
             margin-right: 16px;
             border: 0; }
-          .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar a.group {
+          .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar .author-avatar-image.group {
             display: flex; }
-            .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar a.group img:first-child {
+            .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar .author-avatar-image.group img:first-child {
               border: 0;
               margin-right: 0; }
-            .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar a.group img:last-child {
+            .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar .author-avatar-image.group img:last-child {
               margin-left: -3px;
               box-shadow: 0 0 0 4px #fff;
               margin-right: 15px; }
@@ -1114,7 +1115,7 @@ input[type="search"]::-webkit-search-results-decoration {
               line-height: 22px; }
             .banner-story-container.collapse .banner-box .banner-content .story-data .author-area {
               display: block; }
-              .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar a img {
+              .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image img {
                 margin-right: 14px;
                 border-width: 4px; }
               .banner-story-container.collapse .banner-box .banner-content .story-data .author-area .author-data {
@@ -1153,18 +1154,18 @@ input[type="search"]::-webkit-search-results-decoration {
           display: flex; }
           .banner-story-container.expanded .banner-box .banner-content .story-data .author-area span {
             line-height: 26px; }
-          .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar a img {
+          .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image img {
             width: 48px;
             height: 48px;
             border-radius: 50%;
             margin-right: 16px;
             border: 0; }
-          .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar a.group {
+          .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image.group {
             display: flex; }
-            .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar a.group img:first-child {
+            .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image.group img:first-child {
               border: 0;
               margin-right: 0; }
-            .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar a.group img:last-child {
+            .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image.group img:last-child {
               margin-left: -3px;
               box-shadow: 0 0 0 4px #fff;
               margin-right: 15px; }
@@ -1249,10 +1250,10 @@ input[type="search"]::-webkit-search-results-decoration {
               .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar {
                 width: 30%;
                 float: left; }
-                .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar a.group img {
+                .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image.group img {
                   width: 40px;
                   height: 40px; }
-                  .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar a.group img:last-child {
+                  .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-avatar author-avatar-image.group img:last-child {
                     margin-left: -15px;
                     margin-right: 0; }
               .banner-story-container.expanded .banner-box .banner-content .story-data .author-area .author-data {
