@@ -31,3 +31,18 @@ export function getEntity(list, stories = {}, entity) {
     return listEntity[id];
   }).filter(a => !!a);
 }
+
+export function getStory(story, entities) {
+  const pictures = story && getPictures(story.pictures, entities);
+  const videos = story && getEntity(story.videos, entities, 'video');
+  const authors = story && getAuthors(story.authors, entities);
+  const countries = story && getEntity(story.countries, entities, 'country');
+
+  return {
+    ...story,
+    pictures,
+    videos,
+    authors,
+    countries
+  };
+}
