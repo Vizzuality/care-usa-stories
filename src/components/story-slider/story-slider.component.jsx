@@ -6,9 +6,12 @@ const settings = {
   dots: true,
   arrows: false,
   infinite: true,
-  speed: 500,
+  speed: 1500,
+  duration: 4000,
   slidesToShow: 1,
-  adaptiveHeight: true
+  adaptiveHeight: true,
+  draggable: false,
+  autoplay: true
 };
 
 function StorySlider (props) {

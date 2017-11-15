@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import cx from 'classnames';
-import DetailBanner from "components/detail-banner.component";
-import ArticleVideo from "components/article-video/article-video";
-import ArticleQuote from "components/article-quote.component";
-import RecentStories from "components/recent-stories.component";
-import Newsletter from "components/newsletter.component";
+import DetailBanner from 'components/detail-banner.component';
+import ArticleVideo from 'components/article-video/article-video';
+import ArticleQuote from 'components/article-quote.component';
+import RecentStories from 'components/recent-stories/recent-stories';
+import Newsletter from 'components/newsletter.component';
 
 function DetailTwo ({ story }) {
   const { quote, cite, pictures, videos, summary, body } = story;

@@ -2,7 +2,7 @@ import React from "react";
 import DetailHeader from "components/detail-header.component";
 import ArticleSidebar from "components/article-sidebar.component";
 import ArticlePost from "components/article-post.component";
-import RecentStories from "components/recent-stories.component";
+import RecentStories from "components/recent-stories/recent-stories";
 import Newsletter from "components/newsletter.component";
 
 function DetailThree ({ story }) {
