@@ -1,34 +1,17 @@
 import React from "react";
+import Box from 'components/box.component';
+import DetailSwitch from 'components/detail-switch/detail-switch';
 
-class DetailHeader extends React.Component {
-  render() {
-    return (
-      <section className="gallery-widget-container">
-        <div className="gallery-widget-holder">
-          <figure className="gallery-widget-box">
-            <figcaption>
-              <p>
-                My name is Otim Peter and I am 34 years of age and married.
-                Lillian, and I have six children, ranging in age from 6 months.
-              </p>
-            </figcaption>
-            <div className="gallery-widget-image">
-              <img
-                src="/images/otim.png"
-                alt="My name is Otim Peter and I am 34 years of age and married. Lillian, and I have six children, ranging in age from 6 months."
-              />
-            </div>
-            <p className="view-gallery">
-              <button id="viewBtn" className="gallery-btn" type="button">
-                <i className="icon-plus-circle" />
-              </button>
-              <span>View Gallery</span>
-            </p>
-          </figure>
+function DetailHeader ({ story }) {
+  return (
+    <section className="banner-story-container no-image expanded">
+      <div className="banner-holder">
+        <div className="banner">
+          <Box {...story} />
         </div>
-      </section>
-    );
-  }
+      </div>
+      <DetailSwitch/>
+    </section>
+  );
 }
-
 export default DetailHeader;
