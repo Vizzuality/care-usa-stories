@@ -5,6 +5,8 @@
 .main-head-holder{
   background: #fff;
   .main-head {
+    height: $header-height;
+    overflow: hidden;
     .logo-wrap {
       margin: 0 auto;
       text-align: center;

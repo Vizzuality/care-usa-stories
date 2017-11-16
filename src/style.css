@@ -1468,61 +1468,64 @@ input[type="search"]::-webkit-search-results-decoration {
 ================================================= */
 .main-head-holder {
   background: #fff; }
-  .main-head-holder .main-head .logo-wrap {
-    margin: 0 auto;
-    text-align: center;
-    padding: 27px 0 24px; }
-    @media only screen and (max-width: 767px) {
-      .main-head-holder .main-head .logo-wrap {
-        margin: 0;
-        padding: 28px 0 10px 29px;
-        text-align: left;
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); } }
-    .main-head-holder .main-head .logo-wrap img {
-      vertical-align: middle; }
-  .main-head-holder .main-head .main-menu {
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 20px; }
-    @media only screen and (max-width: 767px) {
-      .main-head-holder .main-head .main-menu {
-        display: none;
-        padding-top: 115px;
-        padding-bottom: 150px; } }
-    @media only screen and (max-width: 767px) {
-      .main-head-holder .main-head .main-menu .main-menu-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center; } }
-    .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item {
-      display: inline-block;
-      margin-left: 7px;
-      margin-right: 14px; }
-      .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link {
-        display: block;
-        padding: 10px 15px; }
-        .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link.button {
-          line-height: 20px; }
+  .main-head-holder .main-head {
+    height: 156px;
+    overflow: hidden; }
+    .main-head-holder .main-head .logo-wrap {
+      margin: 0 auto;
+      text-align: center;
+      padding: 27px 0 24px; }
       @media only screen and (max-width: 767px) {
-        .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item {
-          margin-left: 0;
-          margin-right: 0;
-          margin-top: 10px;
-          margin-bottom: 10px;
+        .main-head-holder .main-head .logo-wrap {
+          margin: 0;
+          padding: 28px 0 10px 29px;
+          text-align: left;
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); } }
+      .main-head-holder .main-head .logo-wrap img {
+        vertical-align: middle; }
+    .main-head-holder .main-head .main-menu {
+      margin: 0 auto;
+      text-align: center;
+      padding-bottom: 20px; }
+      @media only screen and (max-width: 767px) {
+        .main-head-holder .main-head .main-menu {
+          display: none;
+          padding-top: 115px;
+          padding-bottom: 150px; } }
+      @media only screen and (max-width: 767px) {
+        .main-head-holder .main-head .main-menu .main-menu-list {
+          display: flex;
+          flex-direction: column;
+          align-items: center; } }
+      .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item {
+        display: inline-block;
+        margin-left: 7px;
+        margin-right: 14px; }
+        .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link {
           display: block;
-          text-align: center; }
-          .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item:first-child {
-            margin-top: 0; }
-          .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item:last-child {
-            margin-top: 30px;
-            margin-bottom: 0; }
-          .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link {
-            padding: 7px 15px;
-            font-size: 14px; }
-            .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link.button {
-              line-height: 35px;
-              min-width: 156px;
-              height: 50px; } }
+          padding: 10px 15px; }
+          .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link.button {
+            line-height: 20px; }
+        @media only screen and (max-width: 767px) {
+          .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center; }
+            .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item:first-child {
+              margin-top: 0; }
+            .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item:last-child {
+              margin-top: 30px;
+              margin-bottom: 0; }
+            .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link {
+              padding: 7px 15px;
+              font-size: 14px; }
+              .main-head-holder .main-head .main-menu .main-menu-list .menu-list-item .menu-link.button {
+                line-height: 35px;
+                min-width: 156px;
+                height: 50px; } }
 
 .mob-menu {
   text-align: center;
@@ -2067,3 +2070,16 @@ form.newsletter-form {
             padding-right: 0;
             font-size: 12px;
             line-height: 26px; } }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1000; }
+
+.modal-content {
+  height: 100%; }
