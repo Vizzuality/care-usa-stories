@@ -1,6 +1,6 @@
 import React from "react";
 
-function ArticleSidebar ({ picture, quote }) {
+function ArticleSidebar ({ picture, quote, openGallery }) {
   return (
     <section className="gallery-widget-container">
       <div className="gallery-widget-holder">

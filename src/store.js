@@ -8,3 +8,4 @@ export function createReducer(initialState, reducers) {
 export { storiesDuck as stories } from 'pages/stories/stories';
 export { filtersDuck as filters } from 'components/filters/filters';
 export { storiesGridDuck as storiesGrid } from 'components/stories-grid/stories-grid';
+export { modalDuck as modal } from 'components/modal/modal';

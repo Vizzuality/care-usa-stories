@@ -6,6 +6,8 @@ class Modal extends React.Component {
     super(props);
     this.root = document.getElementById('modal-root');
     this.el = document.createElement('aside');
+    window.addEventListener('keyup', this.onKeyUp);
+
   }
   componentDidMount () {
     this.root.appendChild(this.el);
@@ -13,6 +15,16 @@ class Modal extends React.Component {
 
   componentWillUnmount () {
     this.root.removeChild(this.el);
+  }
+
+  componentDidUpdate() {
+    const modalOpened = '__modal-opened';
+    if (this.props.open) document.body.classList.add(modalOpened);
+    else document.body.classList.remove(modalOpened);
+  }
+
+  onKeyUp(e) {
+    if (e.key === 'Escape') this.props.toggleModal(false);
   }
 
   render () {
