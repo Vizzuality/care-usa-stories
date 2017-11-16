@@ -1,52 +1,68 @@
 /* Main gallery
 ================================================= */
+$box-height: 460px;
+$text-height: 150px;
+$box-width: 820px;
+
 .main-gallery-container {
+  position: relative;
+  height: 100%;
   width: 100%;
-  background-color: transparent;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  z-index: 999;
+  background-color: #1b1d29;
+
   .main-gallery-holder {
-    display: flex;
-    max-width: 1030px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: block;
     margin: 0 auto;
-    justify-content: space-between;
+    flex-direction: column;
+    width: $box-width;
+
     .main-gallery-box {
-      width: 80%;
-      figure {
+      height: $box-height;
+      width: 100%;
+
+      .gallery-box-item {
+        height: 100%;
         width: 100%;
-        figcaption {
-          display: flex;
-          h5 {
-            width: 20%;
-          }
-          p {
-            width: 80%;
-            color: #fff;
-          }
+
+        .gallery-slide {
+          width: $box-width;
+          height: $box-height;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
         }
       }
     }
-    .slider-nav-thumbnails {
-      width: 16.8%;
-      .slider-nav-thumbnails-item {
-        picture {
-          display: block;
-          padding-top: 10px;
-        }
-        img{
-          display: block;
-          width: 170px;
-          height: 110px;
-        }
-        &:first-child {
-          picture {
-            padding-top: 0;
-          }
-        }
+
+    .slide-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-top: 46px;
+      min-height: $text-height;
+
+      p {
+        width: 614px;
       }
+    }
+  }
+
+  .switchers-area {
+    position: absolute;
+    height: $box-height + $text-height;
+    min-width: 172px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+
+    .preview-container {
+      display: flex;
+      align-items: flex-end;
+      height: $box-height;
     }
   }
 }
