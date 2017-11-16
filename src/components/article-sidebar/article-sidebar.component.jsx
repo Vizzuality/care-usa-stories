@@ -1,6 +1,6 @@
 import React from "react";
 
-function ArticleSidebar ({ picture, quote }) {
+function ArticleSidebar ({ picture, quote, openGallery }) {
   return (
     <section className="gallery-widget-container">
       <div className="gallery-widget-holder">
@@ -18,12 +18,12 @@ function ArticleSidebar ({ picture, quote }) {
               />
             </div>
           }
-          <p className="view-gallery">
-            <button id="viewBtn" className="gallery-btn" type="button">
+          <button className="view-gallery" onClick={openGallery}>
+            <div id="viewBtn" className="gallery-btn">
               <i className="icon-plus-circle" />
-            </button>
+            </div>
             <span>View Gallery</span>
-          </p>
+          </button>
         </figure>
       </div>
     </section>

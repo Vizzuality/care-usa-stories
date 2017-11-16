@@ -1,9 +1,11 @@
 import React from "react";
 import DetailHeader from "components/detail-header.component";
-import ArticleSidebar from "components/article-sidebar.component";
+import ArticleSidebar from "components/article-sidebar/article-sidebar";
 import ArticlePost from "components/article-post.component";
 import RecentStories from "components/recent-stories/recent-stories";
 import Newsletter from "components/newsletter.component";
+import Modal from 'components/modal/modal';
+import ImageGallery from 'components/image-gallery/image-gallery';
 
 function DetailThree ({ story }) {
   const { quote, body, pictures = [] } = story;
@@ -15,8 +17,11 @@ function DetailThree ({ story }) {
         <ArticleSidebar quote={quote} picture={sidebarPicture} />
         <ArticlePost body={body} />
       </article>
-      <RecentStories/>
-      <Newsletter/>
+      <RecentStories />
+      <Newsletter />
+      <Modal>
+        <ImageGallery slides={pictures} />
+      </Modal>
     </main>
   );
 }

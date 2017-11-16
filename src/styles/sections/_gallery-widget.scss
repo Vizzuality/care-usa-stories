@@ -17,12 +17,23 @@
       }
       .view-gallery {
         padding-top: 12px;
+        display: flex;
+        align-items: center;
+
+        &:active {
+          opacity: 0.9;
+        }
+
         span {
           display: inline-block;
           color: $paragraph-color;
           font-family: $karla-r;
           font-size: 16px;
           line-height: 34px;
+
+          &:hover {
+            color: lighten($paragraph-color, 15%);
+          }
         }
         i {
           font-size: 24px;
