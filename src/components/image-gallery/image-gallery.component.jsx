@@ -10,14 +10,26 @@ const settings = {
 };
 
 function ImageGallery(props) {
+  const { getImageGalleryRef, currentSlide, getThumbnailsRef, setCurrentSlide, slides = Array(4).fill(0) } = props;
   return (
     <section className="main-gallery-container">
       <div className="main-gallery-holder">
         <div className="main-gallery-box">
-          <Slider {...settings}>
-            <div className="gallery-box-item">
-              <div className="gallery-slide" style={{ backgroundImage: 'url("/images/article/img4.png")' }} />
-            </div>
+          <Slider
+            {...settings}
+            ref={getImageGalleryRef}
+            afterChange={setCurrentSlide}
+          >
+            {
+              slides.map((slide, i) => (
+                <div key={`image-${i}`} className="gallery-box-item">
+                  <div
+                    className="gallery-slide"
+                    style={{ backgroundImage: 'url("/images/article/img4.png")' }}
+                  />
+                </div>
+              ))
+            }
           </Slider>
         </div>
         <div className="slide-content">
@@ -34,12 +46,20 @@ function ImageGallery(props) {
                 <i className="icon-close-bold" />
               </button>
             </p>
-            <ThumbnailGallery/>
+            <ThumbnailGallery
+              currentSlide={currentSlide}
+              setCurrentSlide={setCurrentSlide}
+              getThumbnailsRef={getThumbnailsRef}
+            />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+ImageGallery.defaultProps = {
+  currentSlide: 0
+};
 
 export default ImageGallery;

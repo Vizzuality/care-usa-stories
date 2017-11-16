@@ -20,7 +20,7 @@ function DetailThree ({ story }) {
       <RecentStories />
       <Newsletter />
       <Modal>
-        <ImageGallery />
+        <ImageGallery slides={pictures} />
       </Modal>
     </main>
   );

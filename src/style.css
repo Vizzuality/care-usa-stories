@@ -1711,7 +1711,23 @@ input[type="search"]::-webkit-search-results-decoration {
       width: 172px;
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center; }
+      background-position: center;
+      cursor: pointer; }
+      .slider-nav-thumbnails .slider-nav-thumbnails-item .thumbnail-slide:hover .thumbnail-veil {
+        opacity: 1;
+        visibility: visible; }
+      .slider-nav-thumbnails .slider-nav-thumbnails-item .thumbnail-slide .thumbnail-veil {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        background-color: rgba(244, 101, 8, 0.8);
+        z-index: 1;
+        transition: opacity .16s linear; }
 
 /* Multi-search
 ================================================= */
