@@ -6,9 +6,10 @@ class Modal extends React.Component {
     super(props);
     this.root = document.getElementById('modal-root');
     this.el = document.createElement('aside');
+    this.onKeyUp = this.onKeyUp.bind(this);
     window.addEventListener('keyup', this.onKeyUp);
-
   }
+
   componentDidMount () {
     this.root.appendChild(this.el);
   }
