@@ -26,16 +26,16 @@ function ImageGallery(props) {
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
         </div>
-      </div>
-      <div className="switchers-area">
-        <div className="preview-container">
-          <p className="switcher-close">
-            <button className="gallery-btn"
-                    title="close">
-              <i className="icon-close-bold" />
-            </button>
+        <div className="switchers-area">
+          <div className="preview-container">
+            <p className="switcher-close">
+              <button className="gallery-btn"
+                      title="close">
+                <i className="icon-close-bold" />
+              </button>
+            </p>
             <ThumbnailGallery/>
-          </p>
+          </div>
         </div>
       </div>
     </section>

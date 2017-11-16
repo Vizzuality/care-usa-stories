@@ -1667,16 +1667,16 @@ input[type="search"]::-webkit-search-results-decoration {
     display: block;
     margin: 0 auto;
     flex-direction: column;
-    width: 820px; }
+    width: 50vw; }
     .main-gallery-container .main-gallery-holder .main-gallery-box {
-      height: 460px;
+      height: 60vh;
       width: 100%; }
       .main-gallery-container .main-gallery-holder .main-gallery-box .gallery-box-item {
         height: 100%;
         width: 100%; }
         .main-gallery-container .main-gallery-holder .main-gallery-box .gallery-box-item .gallery-slide {
-          width: 820px;
-          height: 460px;
+          width: 50vw;
+          height: 60vh;
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center; }
@@ -1684,21 +1684,34 @@ input[type="search"]::-webkit-search-results-decoration {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding-top: 46px;
-      min-height: 150px; }
+      padding-top: 46px; }
       .main-gallery-container .main-gallery-holder .slide-content p {
         width: 614px; }
   .main-gallery-container .switchers-area {
     position: absolute;
-    height: 610px;
-    min-width: 172px;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%); }
-    .main-gallery-container .switchers-area .preview-container {
-      display: flex;
-      align-items: flex-end;
-      height: 460px; }
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60vh;
+    width: 172px;
+    top: 0;
+    right: calc(-172px - 38px); }
+    .main-gallery-container .switchers-area * {
+      margin-bottom: 10px; }
+      .main-gallery-container .switchers-area *:last-child {
+        margin-bottom: 0; }
+
+.slider-nav-thumbnails {
+  width: 172px; }
+  .slider-nav-thumbnails .slider-nav-thumbnails-item {
+    width: 172px; }
+    .slider-nav-thumbnails .slider-nav-thumbnails-item .thumbnail-slide {
+      height: 110px;
+      width: 172px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; }
 
 /* Multi-search
 ================================================= */

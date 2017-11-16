@@ -1,18 +1,27 @@
 import React from 'react';
+import Slider from 'react-slick';
+
+const settings = {
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  vertical: true,
+  dots: false,
+  arrows: false,
+  focusOnSelect: true
+};
 
 function ThumbnailGallery(props) {
   return (
-    <section className="slider-nav-thumbnails">
-      <div className="slider-nav-thumbnails-item">
-        <img
-          className="slide-banner"
-          src="images/gallery/image.png"
-          alt="Name of the Photo"/>
-        <div className="layer">
-          <i className="icon-arrow-left" />
+    <div className="slider-nav-thumbnails">
+      <Slider {...settings}>
+        <div className="slider-nav-thumbnails-item">
+          <div
+            className="thumbnail-slide"
+            style={{ backgroundImage: 'url("/images/recent-stories/img1.png")' }}
+          />
         </div>
-      </div>
-    </section>
+      </Slider>
+    </div>
   );
 }
 
