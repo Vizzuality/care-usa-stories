@@ -11,7 +11,7 @@ const settings = {
 };
 
 function ThumbnailGallery(props) {
-  const { getThumbnailsRef, currentSlide, setCurrentSlide, slides = Array(4).fill(0) } = props;
+  const { getThumbnailsRef, currentSlide, setCurrentSlide, slides = [] } = props;
   return (
     <div className="slider-nav-thumbnails">
       <Slider
@@ -25,7 +25,7 @@ function ThumbnailGallery(props) {
               <div
                 onClick={() => setCurrentSlide(i)}
                 className="thumbnail-slide"
-                style={{ backgroundImage: 'url("/images/recent-stories/img1.png")' }}
+                style={{ backgroundImage: `url(http:${slide.url})` }}
               >
                 <div className="thumbnail-veil">
                   <i className="icon-arrow-left" />

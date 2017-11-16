@@ -3,12 +3,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ImageGallery from './image-gallery.component';
 import imageGalleryDuck, { setCurrentSlide } from './image-gallery.duck';
+import { toggleModal } from 'components/modal/modal.duck';
 
 function mapStateToProps({ imageGallery }) {
   return { currentSlide: imageGallery.currentSlide };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setCurrentSlide }, dispatch);
+  return bindActionCreators({
+    setCurrentSlide,
+    closeGallery: () => toggleModal(false)
+  }, dispatch);
 }
 
 class ImageGalleryContainer extends React.PureComponent {

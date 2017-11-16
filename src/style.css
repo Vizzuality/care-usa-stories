@@ -1675,11 +1675,21 @@ input[type="search"]::-webkit-search-results-decoration {
         height: 100%;
         width: 100%; }
         .main-gallery-container .main-gallery-holder .main-gallery-box .gallery-box-item .gallery-slide {
+          position: relative;
           width: 50vw;
           height: 60vh;
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center; }
+          .main-gallery-container .main-gallery-holder .main-gallery-box .gallery-box-item .gallery-slide cite {
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            font-size: 12px;
+            text-transform: capitalize;
+            line-height: 1.7;
+            color: rgba(128, 128, 128, 0.8);
+            font-family: "KarlaRegular"; }
     .main-gallery-container .main-gallery-holder .slide-content {
       display: flex;
       justify-content: space-between;

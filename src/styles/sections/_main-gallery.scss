@@ -30,11 +30,23 @@ $preview-slide-height: 110px;
         width: 100%;
 
         .gallery-slide {
+          position: relative;
           width: $box-width;
           height: $box-height;
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
+
+          cite {
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            font-size: 12px;
+            text-transform: capitalize;
+            line-height: 1.7;
+            color: rgba($secondary-text-color, 0.8);
+            font-family: $karla-r;
+          }
         }
       }
     }

@@ -10,7 +10,15 @@ const settings = {
 };
 
 function ImageGallery(props) {
-  const { getImageGalleryRef, currentSlide, getThumbnailsRef, setCurrentSlide, slides = Array(4).fill(0) } = props;
+  const {
+    getImageGalleryRef,
+    currentSlide,
+    getThumbnailsRef,
+    setCurrentSlide,
+    slides = [],
+    closeGallery
+  } = props;
+  const activeSlide = slides[currentSlide];
   return (
     <section className="main-gallery-container">
       <div className="main-gallery-holder">
@@ -25,28 +33,34 @@ function ImageGallery(props) {
                 <div key={`image-${i}`} className="gallery-box-item">
                   <div
                     className="gallery-slide"
-                    style={{ backgroundImage: 'url("/images/article/img4.png")' }}
-                  />
+                    style={{ backgroundImage: `url(http:${slide.url})` }}
+                  >
+                    <cite>{slide.credits}</cite>
+                  </div>
                 </div>
               ))
             }
           </Slider>
         </div>
-        <div className="slide-content">
-          <h5>Name of the Photo</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        </div>
+        {activeSlide &&
+          <div className="slide-content">
+            <h5>{activeSlide.title}</h5>
+            <p>{activeSlide.quote}</p>
+          </div>
+        }
         <div className="switchers-area">
           <div className="preview-container">
             <p className="switcher-close">
-              <button className="gallery-btn"
-                      title="close">
+              <button
+                className="gallery-btn"
+                title="close"
+                onClick={closeGallery}
+              >
                 <i className="icon-close-bold" />
               </button>
             </p>
             <ThumbnailGallery
+              slides={slides}
               currentSlide={currentSlide}
               setCurrentSlide={setCurrentSlide}
               getThumbnailsRef={getThumbnailsRef}
