@@ -5,6 +5,7 @@ import ArticlePost from "components/article-post.component";
 import RecentStories from "components/recent-stories/recent-stories";
 import Newsletter from "components/newsletter.component";
 import Modal from 'components/modal/modal';
+import ImageGallery from 'components/image-gallery/image-gallery';
 
 function DetailThree ({ story }) {
   const { quote, body, pictures = [] } = story;
@@ -18,7 +19,9 @@ function DetailThree ({ story }) {
       </article>
       <RecentStories />
       <Newsletter />
-      <Modal />
+      <Modal>
+        <ImageGallery />
+      </Modal>
     </main>
   );
 }
