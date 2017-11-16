@@ -39,6 +39,6 @@
     "build": "npm-run-all build-css build-js"
   },
   "engines": {
-    "node": "v8.1.2"
+    "node": "8.x.x"
   }
 }
