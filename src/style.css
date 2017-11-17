@@ -1985,6 +1985,21 @@ form.newsletter-form {
       .recent-stories-container .recent-slides-holder .slide-item .recent-slide-img {
         height: 220px;
         max-width: inherit; } }
+  .recent-stories-container .recent-slides-holder .slide-item .recent-slide-text {
+    padding: 0 10px;
+    height: 210px;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1b1d29;
+    line-height: 28px;
+    font-family: "MontserratRegular";
+    text-transform: capitalize;
+    color: #fff; }
+    .recent-stories-container .recent-slides-holder .slide-item .recent-slide-text:hover {
+      color: #d9d9d9; }
   @media only screen and (max-width: 425px) {
     .recent-stories-container .recent-slides-holder .slide-item.slick-active {
       width: 220px !important; }

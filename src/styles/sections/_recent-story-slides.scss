@@ -70,6 +70,23 @@
           max-width: inherit;
         }
       }
+      .recent-slide-text {
+        padding: 0 10px;
+        height: 210px;
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #1b1d29;
+        line-height: 28px;
+        font-family: $mont-r;
+        text-transform: capitalize;
+        color: #fff;
+        &:hover {
+          color: darken(#fff, 15%);
+        }
+      }
       &.slick-active {
         @media only screen and (max-width: 425px) {
           width: 220px !important;

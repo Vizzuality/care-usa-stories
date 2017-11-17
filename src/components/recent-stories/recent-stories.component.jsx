@@ -34,7 +34,7 @@ const settings = {
 
 function RecentStories (props) {
   const { slides } = props;
-  const getPicture = story => story.pictures && story.pictures[0];
+  const getPictureUrl = story => story.pictures && story.pictures[0] && story.pictures[0].url;
    return (
     <section className="recent-stories-container">
       <h3>Most Recent Stories</h3>
@@ -46,10 +46,16 @@ function RecentStories (props) {
               slides.map((story, key) => (
                 <div key={`recent-story-${key}`} className="slide-item">
                 <Link to={story.link}>
-                  <div
-                    className="recent-slide-img"
-                    style={{ backgroundImage: `url(http:${getPicture(story).url})`}}
-                  />
+                  {getPictureUrl(story) ?
+                    <div
+                      className="recent-slide-img"
+                      style={{ backgroundImage: `url(http:${getPictureUrl(story)})` }}
+                    />
+                    :
+                    <div className="recent-slide-text">
+                      {story.title}
+                    </div>
+                  }
                 </Link>
                 </div>
               ))
