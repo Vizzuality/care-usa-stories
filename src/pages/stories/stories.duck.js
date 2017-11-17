@@ -1,4 +1,5 @@
 import moment from 'moment';
+import startCase from 'lodash/startCase';
 import { normalize } from 'normalizr';
 import { createReducer } from 'store';
 import contentful from 'contentful-client';
@@ -27,8 +28,19 @@ export async function getStoriesThunk(dispatch, getState) {
     q: 'query',
     date: 'fields.story_date[lte]'
   };
+  const formatQuery= (type, string) => {
+    const formatter = {
+      date: s => moment(s, 'YYYY-MM-DD').toISOString(),
+      category: startCase,
+      template: startCase
+    }[type];
+
+    if (!formatter) return string;
+    return formatter(string);
+  };
+
   const filters = Object.keys(query).reduce((acc, next) => {
-    const value = next === 'date' ? moment(query[next], 'YYYY-MM-DD').toISOString() : query[next];
+    const value = formatQuery(next, query[next]);
     const key = keyMap[next];
     if (key && value) return { ...acc, [key]: value };
     return acc;
@@ -38,6 +50,7 @@ export async function getStoriesThunk(dispatch, getState) {
     content_type: 'story',
     order: 'fields.story_date'
   });
+
   dispatch({
     type: GET_STORIES,
     payload: normalize(items, storiesSchema)
