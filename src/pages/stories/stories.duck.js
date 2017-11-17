@@ -26,7 +26,8 @@ export async function getStoriesThunk(dispatch, getState) {
     category: 'fields.sectorList[in]',
     country: 'fields.countryList[in]',
     q: 'query',
-    date: 'fields.story_date[lte]'
+    date: 'fields.story_date[lte]',
+    template: 'fields.template'
   };
   const formatQuery= (type, string) => {
     const formatter = {
@@ -50,7 +51,6 @@ export async function getStoriesThunk(dispatch, getState) {
     content_type: 'story',
     order: 'fields.story_date'
   });
-
   dispatch({
     type: GET_STORIES,
     payload: normalize(items, storiesSchema)

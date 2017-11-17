@@ -51,7 +51,7 @@ function Filters(props) {
               title="Select Category"
               name="category"
               placeholder="Category"
-              value={query.category}
+              value={query.category || ''}
               onChange={onFilterChange}
             >
               <option value={''}>Category</option>
@@ -70,7 +70,7 @@ function Filters(props) {
               title="Select Country"
               placeholder="Country"
               name="country"
-              value={query.country}
+              value={query.country || ''}
               onChange={onFilterChange}
             >
               <option value={''}>Country</option>
@@ -97,6 +97,7 @@ function Filters(props) {
               id="mostRecentFilter"
               title="Templates"
               name="template"
+              value={query.template || ''}
               onChange={onFilterChange}
             >
               <option value={''}>Most Recent</option>
