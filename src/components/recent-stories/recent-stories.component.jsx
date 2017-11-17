@@ -7,7 +7,6 @@ const settings = {
   arrows: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
   adaptiveHeight: true,
   draggable: false,
   responsive: [
@@ -41,7 +40,7 @@ function RecentStories (props) {
       <span className="group">(12 Stories)</span>
       <div className="recent-slides-holder">
         {slides &&
-          <Slider {...settings}>
+          <Slider {...settings} slidesToShow={Math.min(slides.length, 5)}>
             {
               slides.map((story, key) => (
                 <div key={`recent-story-${key}`} className="slide-item">
