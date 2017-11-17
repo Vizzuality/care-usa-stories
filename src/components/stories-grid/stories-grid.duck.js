@@ -1,6 +1,6 @@
 import { createReducer } from 'store';
 
-const SET_CARD_LIMIT = 'stories/SET_CARD_LIMIT';
+const SET_CARD_OFFSET = 'stories/SET_CARD_LIMIT';
 
 const initialState = {
   cardStart: 3,
@@ -8,15 +8,15 @@ const initialState = {
 };
 
 const storiesGridReducer = {
-  [SET_CARD_LIMIT](state, action) {
+  [SET_CARD_OFFSET](state, action) {
     return { ...state, cardOffset: action.payload };
   }
 };
 
-export function setCardOffset(limit) {
+export function setCardOffset(offset) {
   return {
-    type: SET_CARD_LIMIT,
-    payload: limit
+    type: SET_CARD_OFFSET,
+    payload: offset
   };
 }
 

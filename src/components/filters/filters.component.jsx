@@ -7,6 +7,7 @@ function Filters(props) {
   const {
     categories,
     countries,
+    templates,
     query,
     selectedDate,
     selectedDateText,
@@ -50,14 +51,14 @@ function Filters(props) {
               title="Select Category"
               name="category"
               placeholder="Category"
-              value={query.category}
+              value={query.category || ''}
               onChange={onFilterChange}
             >
               <option value={''}>Category</option>
               {
-                Object.keys(categories).map(id => (
-                  <option value={categories[id].name} key={id}>
-                    {categories[id].name}
+                categories.map(category => (
+                  <option value={category.value} key={category.value}>
+                    {category.label}
                   </option>
                 ))
               }
@@ -69,14 +70,14 @@ function Filters(props) {
               title="Select Country"
               placeholder="Country"
               name="country"
-              value={query.country}
+              value={query.country || ''}
               onChange={onFilterChange}
             >
               <option value={''}>Country</option>
               {
-                Object.keys(countries).map(id => (
-                  <option value={countries[id].iso} key={id}>
-                    {countries[id].name}
+                countries.map(country => (
+                  <option value={country.value} key={country.value}>
+                    {country.label}
                   </option>
                 ))
               }
@@ -89,16 +90,24 @@ function Filters(props) {
               selected={selectedDate}
               onChange={onDateChange}
             />
-            <i className="icon-calendar"></i>
+            <i className="icon-calendar" />
           </div>
           <div className="field select">
-            <select id="mostRecentFilter" title="Most recent">
-              <option value disabled>
-                Most Recent
-              </option>
-              <option value>Story 1</option>
-              <option value>Story 2</option>
-              <option value>Story3</option>
+            <select
+              id="mostRecentFilter"
+              title="Templates"
+              name="template"
+              value={query.template || ''}
+              onChange={onFilterChange}
+            >
+              <option value={''}>Most Recent</option>
+              {
+                templates.map(template => (
+                  <option value={template.value} key={template.value}>
+                    {template.label}
+                  </option>
+                ))
+              }
             </select>
           </div>
         </div>

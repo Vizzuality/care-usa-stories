@@ -1,18 +1,30 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
+import uniqBy from 'lodash/uniqBy';
+import kebabCase from 'lodash/kebabCase';
 import moment from 'moment';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import FiltersComponent from './filters.component';
 import filtersDuck, { updateFilters } from './filters.duck';
 
-function mapStateToProps({ filters, location }) {
-  const categories = filters.categories.entities.category || {};
-  const countries = filters.countries.entities.country || {};
+function mapStateToProps({ filters, location, stories }) {
+  const categories = Object.values(filters.categories.entities.category || {})
+    .map(category => ({ value: kebabCase(category.name), label: category.name }));
+
+  const countries = Object.values(filters.countries.entities.country || {})
+    .map(country => ({ value: country.iso, label: country.name }));
+
+  const templates = uniqBy(
+    Object.values(stories.entities.story || {}),
+    'template'
+  ).map(story => (({ value: kebabCase(story.template), label: story.template })));
+
   return {
     categories,
     countries,
+    templates,
     query: location.query
   };
 }
@@ -25,14 +37,16 @@ class FiltersContainer extends React.Component {
 
   static defaultProps = {
     query: {},
-    categories: {},
-    countries: {}
+    categories: [],
+    countries: [],
+    templates: []
   };
 
   static propTypes = {
     query: PropTypes.object,
-    categories: PropTypes.object.isRequired,
-    countries: PropTypes.object.isRequired
+    categories: PropTypes.array.isRequired,
+    countries: PropTypes.array.isRequired,
+    templates: PropTypes.array.isRequired
   };
 
   constructor(props) {
