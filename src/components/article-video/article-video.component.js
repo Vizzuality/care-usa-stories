@@ -1,6 +1,6 @@
 import React from "react";
 
-function ArticleVideo ({ video, getVideoRef, onClickPlay, paused }) {
+function ArticleVideo ({ video, getVideoRef, onClickPlay, paused, quote }) {
   return (
     <section className="video-container widget">
       <div className="video-box">
@@ -20,13 +20,13 @@ function ArticleVideo ({ video, getVideoRef, onClickPlay, paused }) {
           }
         </button>
       </div>
-      <div className="video-content-area">
-        <p>
-          "I wake up around 4 a.m., do the cleaning, make breakfast for me
-          and my younger brother, get ready for school and by 6:15, I leave
-          for school."
-        </p>
-      </div>
+      {quote &&
+        <div className="video-content-area">
+          <p>
+            "{quote}"
+          </p>
+        </div>
+      }
     </section>
   );
 }

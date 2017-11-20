@@ -3,31 +3,31 @@ import Box from "./box.component";
 import DetailSwitch from "components/detail-switch/detail-switch";
 import ShowOnMap from 'components/show-on-map.component';
 
-function DetailBanner ({ story, showSummary }) {
+function DetailBanner ({ story, showSummary, showOnMap }) {
 
-  const { pictures: [picture] = [] } = story;
+  const { cover } = story;
 
   return (
     <section className="banner-story-container collapse">
       <div className="banner-holder">
         <div className="banner">
-          {picture &&
+          {cover &&
             <picture>
               <source
                 media="(max-width: 767px)"
-                srcSet={`https://${picture.url}`}
+                srcSet={`https://${cover.url}`}
               />
               <img
                 className="banner-img"
-                src={`https://${picture.url}`}
-                alt={picture.title}
+                src={`https://${cover.url}`}
+                alt={cover.title}
               />
             </picture>
           }
           <div className="banner-box">
             <Box showSummary={showSummary} {...story} />
           </div>
-          <ShowOnMap />
+          {showOnMap && <ShowOnMap />}
         </div>
       </div>
       <DetailSwitch/>

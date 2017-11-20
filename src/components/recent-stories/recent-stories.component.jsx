@@ -33,11 +33,11 @@ const settings = {
 
 function RecentStories (props) {
   const { slides } = props;
-  const getPictureUrl = story => story.pictures && story.pictures[0] && story.pictures[0].url;
+  const getPictureUrl = story => story.cover && story.cover.url;
    return (
     <section className="recent-stories-container">
       <h3>Most Recent Stories</h3>
-      <span className="group">(12 Stories)</span>
+      <span className="group">({slides ? slides.length : 0} Stories)</span>
       <div className="recent-slides-holder">
         {slides &&
           <Slider {...settings} slidesToShow={Math.min(slides.length, 5)}>

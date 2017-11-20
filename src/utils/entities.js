@@ -33,13 +33,15 @@ export function getEntity(list, stories = {}, entity) {
 }
 
 export function getStory(story, entities) {
-  const pictures = story && getPictures(story.pictures, entities);
+  const pictureList = story && getPictures(story.pictures, entities);
   const videos = story && getEntity(story.videos, entities, 'video');
   const authors = story && getAuthors(story.authors, entities);
   const countries = story && getEntity(story.countries, entities, 'country');
-
+  const pictures = pictureList && pictureList.filter(p => !p.cover);
+  const cover = pictureList && pictureList.find(p => p.cover);
   return {
     ...story,
+    cover,
     pictures,
     videos,
     authors,

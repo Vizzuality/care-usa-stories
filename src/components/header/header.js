@@ -24,7 +24,7 @@ class HeaderContainer extends React.Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener(this.closeMobileMenu)
+    document.removeEventListener('click', this.closeMobileMenu)
   }
 
   // TODO: move to the store
