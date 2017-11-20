@@ -1,5 +1,6 @@
 import React from "react";
 import DetailHeader from "components/detail-header.component";
+import DetailBanner from "components/detail-banner.component";
 import ArticleSidebar from "components/article-sidebar/article-sidebar";
 import ArticlePost from "components/article-post.component";
 import RecentStories from "components/recent-stories/recent-stories";
@@ -12,7 +13,10 @@ function DetailThree ({ story }) {
   const [sidebarPicture] = pictures;
   return (
     <main id="pageContent" className="page-wrapper">
-      <DetailHeader story={story} />
+      {story.cover
+        ? <DetailBanner story={story}/>
+        : <DetailHeader story={story} />
+      }
       <article className="article-expanded-container gallery-widget-content">
         <ArticleSidebar
           quote={(sidebarPicture && sidebarPicture.quote) || quote}

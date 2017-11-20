@@ -7,12 +7,12 @@ function TextContent({ children }) {
       return [
         <div className="std" key={`main-text-content${i}`}>
           {
-            textContent.split('\n').map(paragraph => (
-              <p key={paragraph}>{paragraph}</p>
+            textContent.split('\n').map((paragraph, i) => (
+              <p key={i + paragraph}>{paragraph}</p>
             ))
           }
         </div>,
-        <div className="std list" key={`list-text-content${i}`}>
+        <div className="std list" key={`list-text-content${i}-${textContent}`}>
           <ul>
             {
               bulletPoints.map(bulletPoint => (
@@ -27,7 +27,7 @@ function TextContent({ children }) {
     }
     return child;
   });
-  return content;
+  return content || [];
 }
 
 export default TextContent;

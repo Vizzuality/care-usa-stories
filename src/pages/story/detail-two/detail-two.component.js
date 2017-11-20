@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import DetailBanner from 'components/detail-banner.component';
+import DetailHeader from 'components/detail-header.component';
 import ArticleVideo from 'components/article-video/article-video';
 import ArticleQuote from 'components/article-quote.component';
 import RecentStories from 'components/recent-stories/recent-stories';
@@ -19,7 +20,10 @@ function DetailTwo ({ story }) {
 
   return (
     <main id="pageContent" className="page-wrapper">
-      <DetailBanner story={story}/>
+      {story.cover
+        ? <DetailBanner story={story}/>
+        : <DetailHeader story={story} />
+      }
       <article className="article-expanded-container">
         <div className="article-expanded-holder video-content">
           {video && <ArticleVideo video={video} />}
