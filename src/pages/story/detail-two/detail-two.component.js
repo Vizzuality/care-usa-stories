@@ -9,13 +9,14 @@ import TextContent from 'components/text-content.component';
 
 function DetailTwo ({ story }) {
   const { quote, cite, pictures, videos, summary, body = '' } = story;
-  const [, quotePicture] = pictures;
+  const [quotePicture] = pictures;
   const [video] = videos;
   const hasQuote = quotePicture || quote;
   const bodyParts = body.split('\n');
   const separator = Math.floor(bodyParts.length / 2);
   const bodyTop = bodyParts.slice(0, separator).join('\n');
   const bodyBottom = bodyParts.slice(separator).join('\n');
+
   return (
     <main id="pageContent" className="page-wrapper">
       <DetailBanner story={story}/>
@@ -35,7 +36,7 @@ function DetailTwo ({ story }) {
           {hasQuote &&
             <ArticleQuote
               picture={quotePicture}
-              quote={quote}
+              quote={quotePicture.quote || quote}
               cite={cite}
             />
           }

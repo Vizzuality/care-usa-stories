@@ -9,12 +9,16 @@ import ImageGallery from 'components/image-gallery/image-gallery';
 
 function DetailThree ({ story }) {
   const { quote, body, pictures = [] } = story;
-  const [, sidebarPicture] = pictures;
+  const [sidebarPicture] = pictures;
   return (
     <main id="pageContent" className="page-wrapper">
       <DetailHeader story={story} />
       <article className="article-expanded-container gallery-widget-content">
-        <ArticleSidebar quote={quote} picture={sidebarPicture} />
+        <ArticleSidebar
+          quote={(sidebarPicture && sidebarPicture.quote) || quote}
+          picture={sidebarPicture}
+          showGallery={pictures.length > 0}
+        />
         <ArticlePost body={body} />
       </article>
       <RecentStories />

@@ -5,22 +5,22 @@ import ShowOnMap from 'components/show-on-map.component';
 
 function DetailBanner ({ story, showSummary }) {
 
-  const { pictures: [picture] = [] } = story;
+  const { cover } = story;
 
   return (
     <section className="banner-story-container collapse">
       <div className="banner-holder">
         <div className="banner">
-          {picture &&
+          {cover &&
             <picture>
               <source
                 media="(max-width: 767px)"
-                srcSet={`https://${picture.url}`}
+                srcSet={`https://${cover.url}`}
               />
               <img
                 className="banner-img"
-                src={`https://${picture.url}`}
-                alt={picture.title}
+                src={`https://${cover.url}`}
+                alt={cover.title}
               />
             </picture>
           }

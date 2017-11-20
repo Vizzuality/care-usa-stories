@@ -5,13 +5,13 @@ import DetailThree from './detail-three/detail-three.component';
 
 function Story(props) {
   const { template, story } = props;
-  const Detail = (template && story.pictures) ? {
+  const Detail = (template && story.cover) ? {
     photoStory: DetailThree,
     videoStory: DetailTwo
   }[template] : DetailThree;
   return (
     <main id="pageContent" className="page-wrapper home">
-      {template && <Detail story={story}/>}
+      {template && <Detail story={story} />}
     </main>
   );
 }

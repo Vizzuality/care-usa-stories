@@ -6,7 +6,11 @@ function TextContent({ children }) {
       const [textContent, ...bulletPoints] = child.split('- ');
       return [
         <div className="std" key={`main-text-content${i}`}>
-          <p>{textContent}</p>
+          {
+            textContent.split('\n').map(paragraph => (
+              <p key={paragraph}>{paragraph}</p>
+            ))
+          }
         </div>,
         <div className="std list" key={`list-text-content${i}`}>
           <ul>
