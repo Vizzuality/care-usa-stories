@@ -9,12 +9,12 @@ import Modal from 'components/modal/modal';
 import ImageGallery from 'components/image-gallery/image-gallery';
 
 function DetailThree ({ story }) {
-  const { quote, body, pictures = [] } = story;
+  const { cover, quote, body, pictures = [] } = story;
   const [sidebarPicture] = pictures;
   return (
     <main id="pageContent" className="page-wrapper">
-      {story.cover
-        ? <DetailBanner story={story}/>
+      {cover
+        ? <DetailBanner showOnMap={false} story={story}/>
         : <DetailHeader story={story} />
       }
       <article className="article-expanded-container gallery-widget-content">

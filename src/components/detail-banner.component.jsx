@@ -3,7 +3,7 @@ import Box from "./box.component";
 import DetailSwitch from "components/detail-switch/detail-switch";
 import ShowOnMap from 'components/show-on-map.component';
 
-function DetailBanner ({ story, showSummary }) {
+function DetailBanner ({ story, showSummary, showOnMap }) {
 
   const { cover } = story;
 
@@ -27,7 +27,7 @@ function DetailBanner ({ story, showSummary }) {
           <div className="banner-box">
             <Box showSummary={showSummary} {...story} />
           </div>
-          <ShowOnMap />
+          {showOnMap && <ShowOnMap />}
         </div>
       </div>
       <DetailSwitch/>
