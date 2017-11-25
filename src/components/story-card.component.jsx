@@ -12,10 +12,10 @@ const getHeight = (w,h) => {
   return 172;
 };
 
-const StoryCard =  ({ link, image, sectorList, location, title, summary }) => {
+const StoryCard =  ({ link, sectorList, location, title, summary, cover }) => {
   const dimensions = {
-    width: (image && image.details && image.details.image.width) || 0,
-    height: (image && image.details && image.details.image.height) || 0
+    width: (cover && cover.details && cover.details.image.width) || 0,
+    height: (cover && cover.details && cover.details.image.height) || 0
   };
   const height = getHeight(dimensions.width, dimensions.height);
   return (
@@ -23,11 +23,11 @@ const StoryCard =  ({ link, image, sectorList, location, title, summary }) => {
       <Link className="holder" to={link}>
         <figure className="article-content">
           <div
-            className={cx('article-layer', { 'no-image': !image })}
+            className={cx('article-layer', { 'no-image': !cover })}
             style={{ maxHeight: height }}
           >
-            {image &&
-            <img src={`http:${image.url}`} alt={image.filename}/>
+            {cover &&
+            <img src={`http:${cover.url}`} alt={cover.title}/>
             }
             <p>
               <button className="btn" type="button">
