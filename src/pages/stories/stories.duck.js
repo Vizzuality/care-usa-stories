@@ -1,59 +1,77 @@
-import moment from 'moment';
-import startCase from 'lodash/startCase';
+import isEmpty from 'lodash/isEmpty';
 import { normalize } from 'normalizr';
 import { createReducer } from 'store';
 import contentful from 'contentful-client';
 import { stories as storiesSchema } from 'schemas';
+import { buildFilters } from 'utils/stories';
 
 const GET_STORIES = 'stories/GET_STORIES';
+const GET_FILTERED_STORIES = 'stories/GET_FILTERED_STORIES';
+const SET_FITERS_ACTIVE = 'stories/SET_FITERS_ACTIVE';
 
 const initialState = {
-  entities: {},
-  result: []
+  all: {
+    entities: {},
+    result: []
+  },
+  filtered: {
+    entities: {},
+    result: []
+  },
+  filtersActive: false
 };
 
 const storiesReducer = {
   [GET_STORIES](state, action) {
-    return { ...state, ...action.payload };
+    return { ...state, all: action.payload };
+  },
+  [GET_FILTERED_STORIES](state, action) {
+    return { ...state, filtered: action.payload };
+  },
+  [SET_FITERS_ACTIVE](state, action) {
+    return { ...state, filtersActive: action.payload };
   }
 };
 
 
 // Navigation pre-fetching thunks
 export async function getStoriesThunk(dispatch, getState) {
+  const { all } = getState().stories;
+  if (all.result.length === 0) {
+    const { items } = await contentful.getEntries({
+      content_type: 'story',
+      order: 'fields.story_date'
+    });
+
+    dispatch({
+      type: GET_STORIES,
+      payload: normalize(items, storiesSchema)
+    });
+  }
+}
+
+export async function getFilteredStoriesThunk(dispatch, getState) {
   const { query = {} } = getState().location;
-  const keyMap = {
-    category: 'fields.sectorList[in]',
-    country: 'fields.countryList[in]',
-    q: 'query',
-    date: 'fields.story_date[lte]',
-    template: 'fields.template'
-  };
-  const formatQuery= (type, string) => {
-    const formatter = {
-      date: s => moment(s, 'YYYY-MM-DD').toISOString(),
-      category: startCase,
-      template: startCase
-    }[type];
+  let filtersActive = false;
 
-    if (!formatter) return string;
-    return formatter(string);
-  };
+  if (!isEmpty(query)) {
+    filtersActive = true;
+    const filters = buildFilters(query);
+    const { items } = await contentful.getEntries({
+      ...filters,
+      content_type: 'story',
+      order: 'fields.story_date'
+    });
 
-  const filters = Object.keys(query).reduce((acc, next) => {
-    const value = formatQuery(next, query[next]);
-    const key = keyMap[next];
-    if (key && value) return { ...acc, [key]: value };
-    return acc;
-  }, {});
-  const { items } = await contentful.getEntries({
-    ...filters,
-    content_type: 'story',
-    order: 'fields.story_date'
-  });
+    dispatch({
+      type: GET_FILTERED_STORIES,
+      payload: normalize(items, storiesSchema)
+    });
+  }
+
   dispatch({
-    type: GET_STORIES,
-    payload: normalize(items, storiesSchema)
+    type: SET_FITERS_ACTIVE,
+    payload: filtersActive
   });
 }
 

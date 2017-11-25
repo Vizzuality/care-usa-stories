@@ -793,9 +793,11 @@ input[type="search"]::-webkit-search-results-decoration {
           max-width: 264px; } }
       .article-container .grid .article-list .box {
         height: 650px;
+        width: 324px;
         max-width: 324px; }
         @media only screen and (max-width: 750px) {
           .article-container .grid .article-list .box {
+            width: 264px;
             max-width: 264px; } }
         .article-container .grid .article-list .box .holder {
           font-size: 0;

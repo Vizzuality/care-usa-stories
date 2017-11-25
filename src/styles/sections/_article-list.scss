@@ -23,8 +23,10 @@
       }
       .box {
         height: 650px;
+        width: 324px;
         max-width: 324px;
         @media only screen and (max-width: $breakpoint-s) {
+          width: 264px;
           max-width: 264px;
         }
         .holder {

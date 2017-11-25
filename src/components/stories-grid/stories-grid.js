@@ -4,17 +4,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { STORY } from 'router';
-import { getPictures } from 'utils/entities';
+import { getStory } from 'utils/entities';
 import storiesGridDuck, { setCardOffset }  from './stories-grid.duck';
 import StoriesGrid from './stories-grid.component';
 
 class StoriesGridContainer extends React.Component {
 
   static propTypes = {
-    entities: PropTypes.object,
+    storyEntities: PropTypes.object,
     cardStart: PropTypes.number,
-    cardOffset: PropTypes.number,
-    cardLimit: PropTypes.number
+    cardOffset: PropTypes.number
   };
 
   getLink(story, id) {
@@ -22,25 +21,29 @@ class StoriesGridContainer extends React.Component {
   }
 
   render() {
-    const stories = this.props.entities ? this.props.entities.story : {};
+    const { storyEntities, cardStart, cardOffset } = this.props;
+    const stories =  storyEntities.story || {};
     const cards = (stories ? Object.keys(stories) : [])
       .map(id => {
-        const story = stories[id];
-        const pictures = getPictures(story.pictures, this.props.entities);
+        const story = getStory(stories[id], storyEntities);
+
         return {
           ...story,
-          image: pictures && pictures[0],
           link: this.getLink(story, id)
         };
       })
-      .slice(this.props.cardStart, this.props.cardOffset);
+      .slice(cardStart, cardOffset);
 
     return createElement(StoriesGrid, { ...this.props, cards });
   }
 }
 
-function mapStateToProps({ storiesGrid }) {
-  return { ...storiesGrid };
+function mapStateToProps({ storiesGrid, stories }) {
+  const storyEntities = stories.filtersActive
+    ? stories.filtered.entities
+    : stories.all.entities;
+
+  return { ...storiesGrid, storyEntities };
 }
 
 function mapDispatchToProps(dispatch) {
