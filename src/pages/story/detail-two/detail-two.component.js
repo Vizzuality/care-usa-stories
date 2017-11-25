@@ -9,7 +9,7 @@ import Newsletter from 'components/newsletter.component';
 import TextContent from 'components/text-content.component';
 
 function DetailTwo ({ story }) {
-  const { quote, cite, pictures, videos, summary, body = '' } = story;
+  const { quote, cite, pictures = [], videos = [], summary, body = '' } = story;
   const [quotePicture] = pictures;
   const [video] = videos;
   const hasQuote = quotePicture || quote;
@@ -40,7 +40,7 @@ function DetailTwo ({ story }) {
           {hasQuote &&
             <ArticleQuote
               picture={quotePicture}
-              quote={quotePicture.quote || quote}
+              quote={quotePicture ? quotePicture.quote : quote}
               cite={cite}
             />
           }

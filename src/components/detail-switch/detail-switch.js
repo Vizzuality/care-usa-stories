@@ -3,10 +3,11 @@ import DetailSwitch from './detail-switch.component';
 import { STORIES, STORY } from 'router';
 
 function mapStateToProps({ stories, location }) {
+  const storyList = stories.filtered.result.length > 0 ? stories.filtered : stories.all;
   const { slug } = location.payload;
-  const currentIndex = stories.result.findIndex(value => value === slug);
-  const nextSlug = (currentIndex !== -1) && stories.result[currentIndex + 1];
-  const prevSlug = (currentIndex !== -1)  && stories.result[currentIndex - 1];
+  const currentIndex = storyList.result.findIndex(value => value === slug);
+  const nextSlug = (currentIndex !== -1) && storyList.result[currentIndex + 1];
+  const prevSlug = (currentIndex !== -1)  && storyList.result[currentIndex - 1];
 
   const grid = { type: STORIES };
   const next = (nextSlug) && { type: STORY, payload: { slug: nextSlug } };
