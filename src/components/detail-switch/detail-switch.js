@@ -3,7 +3,7 @@ import DetailSwitch from './detail-switch.component';
 import { STORIES, STORY } from 'router';
 
 function mapStateToProps({ stories, location }) {
-  const storyList = stories.filtered.result.length > 0 ? stories.filtered : stories.all;
+  const storyList = stories.filtersActive ? stories.filtered : stories.all;
   const { slug } = location.payload;
   const currentIndex = storyList.result.findIndex(value => value === slug);
   const nextSlug = (currentIndex !== -1) && storyList.result[currentIndex + 1];

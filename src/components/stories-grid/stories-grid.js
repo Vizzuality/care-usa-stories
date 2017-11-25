@@ -40,9 +40,9 @@ class StoriesGridContainer extends React.Component {
 }
 
 function mapStateToProps({ storiesGrid, stories }) {
-  const storyEntities = stories.filtered.result.length === 0
-    ? stories.all.entities
-    : stories.filtered.entities;
+  const storyEntities = stories.filtersActive
+    ? stories.filtered.entities
+    : stories.all.entities;
 
   return { ...storiesGrid, storyEntities };
 }
