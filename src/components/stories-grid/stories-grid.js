@@ -11,10 +11,9 @@ import StoriesGrid from './stories-grid.component';
 class StoriesGridContainer extends React.Component {
 
   static propTypes = {
-    entities: PropTypes.object,
+    storyEntities: PropTypes.object,
     cardStart: PropTypes.number,
-    cardOffset: PropTypes.number,
-    cardLimit: PropTypes.number
+    cardOffset: PropTypes.number
   };
 
   getLink(story, id) {
@@ -22,25 +21,30 @@ class StoriesGridContainer extends React.Component {
   }
 
   render() {
-    const stories = this.props.entities ? this.props.entities.story : {};
+    const { storyEntities, cardStart, cardOffset } = this.props;
+    const stories =  storyEntities.story || {};
     const cards = (stories ? Object.keys(stories) : [])
       .map(id => {
         const story = stories[id];
-        const pictures = getPictures(story.pictures, this.props.entities);
+        const pictures = getPictures(story.pictures, storyEntities);
         return {
           ...story,
           image: pictures && pictures[0],
           link: this.getLink(story, id)
         };
       })
-      .slice(this.props.cardStart, this.props.cardOffset);
+      .slice(cardStart, cardOffset);
 
     return createElement(StoriesGrid, { ...this.props, cards });
   }
 }
 
-function mapStateToProps({ storiesGrid }) {
-  return { ...storiesGrid };
+function mapStateToProps({ storiesGrid, stories }) {
+  const storyEntities = stories.filtered.result.length === 0
+    ? stories.all.entities
+    : stories.filtered.entities;
+
+  return { ...storiesGrid, storyEntities };
 }
 
 function mapDispatchToProps(dispatch) {

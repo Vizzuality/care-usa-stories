@@ -5,9 +5,9 @@ import { getStory } from 'utils/entities';
 
 function mapStateToProps({ stories, location }) {
   const { slug } = location.payload;
-  const currentStory = stories.entities.story && stories.entities.story[slug];
+  const currentStory = stories.all.entities.story && stories.all.entities.story[slug];
   const template = currentStory && camelCase(currentStory.template);
-  const story = getStory(currentStory, stories.entities);
+  const story = getStory(currentStory, stories.all.entities);
   return { story, template };
 }
 

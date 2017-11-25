@@ -4,10 +4,10 @@ import StorySlider from './story-slider.component';
 import { STORY } from 'router';
 
 function mapStateToProps({ stories }) {
-  const slides = stories.entities.story && stories.result.slice(0, 3)
-    .map(id => ({ id, ...stories.entities.story[id] }))
+  const slides = stories.all.entities.story && stories.all.result.slice(0, 3)
+    .map(id => ({ id, ...stories.all.entities.story[id] }))
     .map(({ id, ...story}) => ({
-      ...getStory(story, stories.entities),
+      ...getStory(story, stories.all.entities),
       link: { type: STORY, payload: { slug: id }}
     }));
 
