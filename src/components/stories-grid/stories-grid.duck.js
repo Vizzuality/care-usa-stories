@@ -3,7 +3,7 @@ import { createReducer } from 'store';
 const SET_CARD_OFFSET = 'stories/SET_CARD_LIMIT';
 
 const initialState = {
-  cardStart: 3,
+  cardStart: 0,
   cardOffset: 20
 };
 
