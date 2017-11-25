@@ -3,18 +3,17 @@ import cx from 'classnames';
 import Link from 'redux-first-router-link';
 
 function StorySlide (props) {
-  const { link, title, authors = [], pictures = [], sectorList = [], countries = [] } = props;
-  const [bannerPicture] = pictures;
+  const { link, title, authors = [], sectorList = [], countries = [], cover } = props;
   const avatar = author => (author.photo && author.photo.url);
   const countriesMarkup = countries.map(country => (
     <span key={country.iso} className="country">
       {country.name}
     </span>
   ));
-  const bannerBackground = bannerPicture ? `http:${bannerPicture.url}` : '/images/banner-image.png';
+  const bannerBackground = cover ? `http:${cover.url}` : '/images/banner-image.png';
   return (
     <Link to={link}>
-      <figure className={cx('slide', { veil: !!bannerPicture })}>
+      <figure className={cx('slide', { veil: !!cover })}>
         <div
           className="slide-banner"
           style={{ backgroundImage: `url(${bannerBackground})` }}
