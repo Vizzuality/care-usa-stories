@@ -5,7 +5,6 @@ import DetailHeader from 'components/detail-header.component';
 import ArticleVideo from 'components/article-video/article-video';
 import ArticleQuote from 'components/article-quote.component';
 import RecentStories from 'components/recent-stories/recent-stories';
-import Newsletter from 'components/newsletter.component';
 import TextContent from 'components/text-content.component';
 
 function DetailTwo ({ story }) {
@@ -52,7 +51,6 @@ function DetailTwo ({ story }) {
         </div>
       </article>
       <RecentStories/>
-      <Newsletter/>
     </main>
   );
 }

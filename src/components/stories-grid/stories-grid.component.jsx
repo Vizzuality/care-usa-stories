@@ -21,20 +21,12 @@ function StoriesGrid({ cards, setCardOffset, cardOffset, cardLimit }) {
                 {...storycard}
               />
             )),
-              (<form
+              (<div
                 key="quickDonate"
-                id="quickDonate"
                 className="donate-form box"
-                action="#"
-                method="post"
               >
                 <h4 className="form-heading">Quick Donate</h4>
                 <fieldset className="holder">
-                  <input
-                    id="donateField"
-                    name="donateInput"
-                    placeholder="$"
-                  />
                   <button
                     id="donateSubmit"
                     className="button"
@@ -44,7 +36,7 @@ function StoriesGrid({ cards, setCardOffset, cardOffset, cardLimit }) {
                     DONATE
                   </button>
                 </fieldset>
-              </form>)]
+              </div>)]
           }
         </Masonry>
         {(cardOffset < cardLimit) &&
