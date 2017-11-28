@@ -1,7 +1,6 @@
 import React from "react";
 import DetailBanner from "components/detail-banner.component";
 import RecentStories from "components/recent-stories/recent-stories.component";
-import Newsletter from "components/newsletter.component";
 
 function DetailOne ({ story }) {
 
@@ -9,7 +8,6 @@ function DetailOne ({ story }) {
     <main id="pageContent" className="page-wrapper">
       <DetailBanner showSummary story={story} />
       <RecentStories />
-      <Newsletter />
     </main>
   );
 }

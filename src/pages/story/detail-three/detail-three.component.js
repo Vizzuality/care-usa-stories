@@ -4,7 +4,6 @@ import DetailBanner from "components/detail-banner.component";
 import ArticleSidebar from "components/article-sidebar/article-sidebar";
 import ArticlePost from "components/article-post.component";
 import RecentStories from "components/recent-stories/recent-stories";
-import Newsletter from "components/newsletter.component";
 import Modal from 'components/modal/modal';
 import ImageGallery from 'components/image-gallery/image-gallery';
 
@@ -26,7 +25,6 @@ function DetailThree ({ story }) {
         <ArticlePost body={body} />
       </article>
       <RecentStories />
-      <Newsletter />
       <Modal>
         <ImageGallery slides={pictures} />
       </Modal>

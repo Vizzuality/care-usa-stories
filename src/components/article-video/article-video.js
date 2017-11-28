@@ -15,17 +15,29 @@ class ArticleVideoContainer extends React.Component {
     this.state = { paused: true };
   }
 
+  componentDidMount() {
+    this.video.addEventListener('ended', this.toggleVideoButton)
+  }
+
+  componentWillUnmount() {
+    this.video.removeEventListener('ended', this.toggleVideoButton)
+  }
+
   getVideoRef = (ref) => {
     this.video = ref;
+  };
+
+  toggleVideoButton = () => {
+    this.setState(state => ({ paused: !state.paused }));
   };
 
   onClickPlay() {
     if (this.video.paused) {
       // TODO: move this to store
-      this.setState({ paused: false });
+      this.toggleVideoButton();
       this.video.play();
     } else {
-      this.setState({ paused: true });
+      this.toggleVideoButton();
       this.video.pause();
     }
   }
